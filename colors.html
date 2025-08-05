@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Spotlights Brand Colors | Design Rationale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Brand Color */
+            --purple-50: #F5F0FF;
+            --purple-100: #E9D8FD;
+            --purple-200: #D8B4FE;
+            --purple-300: #C084FC;
+            --purple-400: #A855F7;
+            --purple-500: #7E22CD; /* Primary brand anchor */
+            --purple-600: #6B21A8;
+            --purple-700: #581C87;
+            --purple-800: #3B0764;
+            --purple-900: #2D0A50;
+            --purple-950: #1E0A34;
+            --purple-1000: #0F051A;
+            
+            /* Secondary Colors */
+            --blue-300: #93C5FD;
+            --blue-500: #3B82F6; /* Key interactive elements */
+            --blue-700: #1D4ED8;
+            
+            --gold-300: #FCD34D;
+            --gold-500: #F59E0B; /* Highlights & warnings */
+            --gold-700: #B45309;
+            
+            --green-300: #6EE7B7;
+            --green-500: #10B981; /* Positive confirmation */
+            --green-700: #047857;
+            
+            /* Neutrals */
+            --neutral-50: #F9FAFB;
+            --neutral-100: #F3F4F6;
+            --neutral-200: #E5E7EB;
+            --neutral-300: #D1D5DB;
+            --neutral-400: #9CA3AF;
+            --neutral-500: #6B7280;
+            --neutral-600: #4B5563;
+            --neutral-700: #374151;
+            --neutral-800: #1F2937;
+            --neutral-900: #111827;
+            --neutral-950: #030712;
+            
+            /* Backgrounds */
+            --bg-light: #FFFFFF;
+            --text-light: #1F2937;
+            --card-light: #F9FAFB;
+            
+            --bg-dark: #0F172A;
+            --text-dark: #F1F5F9;
+            --card-dark: #1E293B;
+            
+            --current-bg: var(--bg-light);
+            --current-text: var(--text-light);
+            --current-card: var(--card-light);
+            
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        .dark-mode {
+            --current-bg: var(--bg-dark);
+            --current-text: var(--text-dark);
+            --current-card: var(--card-dark);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--current-bg);
+            color: var(--current-text);
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%);
+        }
+        
+        .dark-mode body {
+            background-image: radial-gradient(circle at 90% 80%, rgba(126, 34, 205, 0.05) 0%, rgba(126, 34, 205, 0) 30%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--purple-100), var(--purple-300));
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-mode header {
+            background: linear-gradient(135deg, var(--purple-900), var(--purple-700));
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .logo-icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--neutral-700);
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-weight: 400;
+        }
+        
+        .dark-mode .subtitle {
+            color: var(--neutral-200);
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            color: var(--purple-700);
+            font-weight: 600;
+            z-index: 3;
+        }
+        
+        .dark-mode .theme-toggle {
+            background: rgba(30, 30, 46, 0.8);
+            color: var(--purple-200);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            background: var(--current-card);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--current-text);
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+        }
+        
+        .control-btn.active {
+            background: var(--purple-500);
+            color: white;
+        }
+        
+        .palettes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .palette-card {
+            background: var(--current-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .palette-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .palette-header {
+            padding: 25px;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .dark-mode .palette-header {
+            border-bottom: 1px solid var(--neutral-700);
+        }
+        
+        .palette-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        
+        .palette-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .palette-icon i {
+            color: white;
+            font-size: 18px;
+        }
+        
+        .palette-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .palette-desc {
+            color: var(--neutral-500);
+            font-size: 1rem;
+        }
+        
+        .dark-mode .palette-desc {
+            color: var(--neutral-400);
+        }
+        
+        .color-ramp {
+            padding: 20px;
+        }
+        
+        .color-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .color-item:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark-mode .color-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .color-preview {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-info {
+            flex-grow: 1;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        
+        .color-value {
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: var(--neutral-500);
+        }
+        
+        .dark-mode .color-value {
+            color: var(--neutral-400);
+        }
+        
+        /* Rationale Section */
+        .rationale-section {
+            background: var(--current-card);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rationale-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--purple-500), var(--blue-500));
+        }
+        
+        .rationale-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .rationale-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .rationale-icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+        
+        .rationale-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .rationale-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .rationale-card {
+            background: rgba(126, 34, 205, 0.03);
+            border-radius: var(--radius);
+            padding: 25px;
+        }
+        
+        .dark-mode .rationale-card {
+            background: rgba(126, 34, 205, 0.08);
+        }
+        
+        .rationale-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--purple-200);
+        }
+        
+        .dark-mode .rationale-card h3 {
+            border-bottom: 2px solid var(--purple-700);
+        }
+        
+        .rationale-card h3 i {
+            color: var(--purple-500);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--purple-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dark-mode .rationale-card h3 i {
+            background: var(--purple-900);
+        }
+        
+        .rationale-card p {
+            margin-bottom: 15px;
+            color: var(--neutral-700);
+            line-height: 1.7;
+        }
+        
+        .dark-mode .rationale-card p {
+            color: var(--neutral-300);
+        }
+        
+        .rationale-card ul {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        .rationale-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .rationale-card ul li::before {
+            content: "•";
+            color: var(--purple-500);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        
+        /* COLOR PILL STYLES - ADDED */
+        .color-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 8px 0;
+            border: 1px solid;
+            font-size: 0.95rem;
+        }
+        
+        .pill-purple {
+            background: rgba(126, 34, 205, 0.15);
+            color: var(--purple-500);
+            border-color: var(--purple-500);
+        }
+        
+        .pill-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--blue-500);
+            border-color: var(--blue-500);
+        }
+        
+        .pill-gold {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--gold-500);
+            border-color: var(--gold-500);
+        }
+        
+        .pill-green {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--green-500);
+            border-color: var(--green-500);
+        }
+        
+        /* Usage Examples */
+        .usage-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .example-card {
+            background: var(--current-card);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .example-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--neutral-200);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .dark-mode .example-title {
+            border-bottom: 1px solid var(--neutral-700);
+        }
+        
+        .ui-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .element {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .element-label {
+            font-size: 0.95rem;
+            color: var(--neutral-600);
+            font-weight: 500;
+        }
+        
+        .dark-mode .element-label {
+            color: var(--neutral-400);
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: var(--purple-500);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: var(--blue-500);
+            color: white;
+        }
+        
+        .btn-premium {
+            background: var(--gold-500);
+            color: white;
+        }
+        
+        .badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .badge-success {
+            background: var(--green-500);
+            color: white;
+        }
+        
+        .badge-premium {
+            background: linear-gradient(135deg, var(--gold-300), var(--gold-700));
+            color: white;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: var(--neutral-200);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .dark-mode .progress-bar {
+            background: var(--neutral-700);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--blue-500);
+            border-radius: 5px;
+            width: 65%;
+        }
+        
+        .color-copy-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--current-card);
+            color: var(--current-text);
+            padding: 12px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .color-copy-message.show {
+            opacity: 1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: var(--neutral-500);
+            border-top: 1px solid var(--neutral-200);
+        }
+        
+        .dark-mode footer {
+            border-top: 1px solid var(--neutral-700);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            .rationale-title {
+                font-size: 1.8rem;
+            }
+            
+            .rationale-section {
+                padding: 25px;
+            }
+            
+            .palette-header {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .theme-toggle {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 15px auto 0;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .control-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <!-- Custom Sonic Spotlights Logo PNG -->
+                        <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+                    </div>
+                </div>
+                <h1>Sonic Spotlights Brand Colors</h1>
+                <p class="subtitle">Color Palette & Design Rationale for Sonic Spotlights Applications</p>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </header>
+        
+        <div class="controls">
+            <button class="control-btn active" data-filter="all">
+                <i class="fas fa-palette"></i> All Colors
+            </button>
+            <button class="control-btn" data-filter="primary">
+                <i class="fas fa-star"></i> Primary
+            </button>
+            <button class="control-btn" data-filter="secondary">
+                <i class="fas fa-circle"></i> Secondary
+            </button>
+            <button class="control-btn" data-filter="neutral">
+                <i class="fas fa-grip-lines"></i> Neutrals
+            </button>
+        </div>
+        
+        <div class="palettes">
+            <!-- Primary Purple -->
+            <div class="palette-card" data-category="primary">
+                <div class="palette-header">
+                    <div class="palette-title">
+                        <div class="palette-icon" style="background: var(--purple-500);">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h2 class="palette-name">Primary Purple</h2>
+                    </div>
+                    <p class="palette-desc">The core brand color representing creativity and innovation</p>
+                </div>
+                <div class="color-ramp">
+                    <div class="color-item" data-color="var(--purple-50)" data-name="Purple 50">
+                        <div class="color-preview" style="background: var(--purple-50);"></div>
+                        <div class="color-info">
+                            <div class="color-name">50 - Lightest</div>
+                            <div class="color-value">#F5F0FF</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--purple-300)" data-name="Purple 300">
+                        <div class="color-preview" style="background: var(--purple-300);"></div>
+                        <div class="color-info">
+                            <div class="color-name">300 - Light Accent</div>
+                            <div class="color-value">#C084FC</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--purple-500)" data-name="Purple 500">
+                        <div class="color-preview" style="background: var(--purple-500);"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 - Brand Primary</div>
+                            <div class="color-value">#7E22CD</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--purple-700)" data-name="Purple 700">
+                        <div class="color-preview" style="background: var(--purple-700);"></div>
+                        <div class="color-info">
+                            <div class="color-name">700 - Dark Accent</div>
+                            <div class="color-value">#581C87</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--purple-900)" data-name="Purple 900">
+                        <div class="color-preview" style="background: var(--purple-900);"></div>
+                        <div class="color-info">
+                            <div class="color-name">900 - Deep Tone</div>
+                            <div class="color-value">#2D0A50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secondary Colors -->
+            <div class="palette-card" data-category="secondary">
+                <div class="palette-header">
+                    <div class="palette-title">
+                        <div class="palette-icon" style="background: var(--blue-500);">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h2 class="palette-name">Secondary Colors</h2>
+                    </div>
+                    <p class="palette-desc">Supporting colors for UI elements and status indicators</p>
+                </div>
+                <div class="color-ramp">
+                    <!-- Electric Blue -->
+                    <div class="color-item" data-color="var(--blue-500)" data-name="Electric Blue">
+                        <div class="color-preview" style="background: var(--blue-500);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Electric Blue</div>
+                            <div class="color-value">#3B82F6</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Amber Gold -->
+                    <div class="color-item" data-color="var(--gold-500)" data-name="Amber Gold">
+                        <div class="color-preview" style="background: var(--gold-500);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Amber Gold</div>
+                            <div class="color-value">#F59E0B</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emerald Green -->
+                    <div class="color-item" data-color="var(--green-500)" data-name="Emerald Green">
+                        <div class="color-preview" style="background: var(--green-500);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Emerald Green</div>
+                            <div class="color-value">#10B981</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Light Blue -->
+                    <div class="color-item" data-color="var(--blue-300)" data-name="Light Blue">
+                        <div class="color-preview" style="background: var(--blue-300);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Light Blue</div>
+                            <div class="color-value">#93C5FD</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Light Gold -->
+                    <div class="color-item" data-color="var(--gold-300)" data-name="Light Gold">
+                        <div class="color-preview" style="background: var(--gold-300);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Light Gold</div>
+                            <div class="color-value">#FCD34D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Neutrals -->
+            <div class="palette-card" data-category="neutral">
+                <div class="palette-header">
+                    <div class="palette-title">
+                        <div class="palette-icon" style="background: var(--neutral-500);">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h2 class="palette-name">Neutral Colors</h2>
+                    </div>
+                    <p class="palette-desc">Foundation for backgrounds, text, and UI surfaces</p>
+                </div>
+                <div class="color-ramp">
+                    <div class="color-item" data-color="var(--neutral-50)" data-name="Neutral 50">
+                        <div class="color-preview" style="background: var(--neutral-50);"></div>
+                        <div class="color-info">
+                            <div class="color-name">50 - Lightest BG</div>
+                            <div class="color-value">#F9FAFB</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--neutral-200)" data-name="Neutral 200">
+                        <div class="color-preview" style="background: var(--neutral-200);"></div>
+                        <div class="color-info">
+                            <div class="color-name">200 - Borders</div>
+                            <div class="color-value">#E5E7EB</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--neutral-400)" data-name="Neutral 400">
+                        <div class="color-preview" style="background: var(--neutral-400);"></div>
+                        <div class="color-info">
+                            <div class="color-name">400 - Secondary Text</div>
+                            <div class="color-value">#9CA3AF</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--neutral-600)" data-name="Neutral 600">
+                        <div class="color-preview" style="background: var(--neutral-600);"></div>
+                        <div class="color-info">
+                            <div class="color-name">600 - Body Text</div>
+                            <div class="color-value">#4B5563</div>
+                        </div>
+                    </div>
+                    <div class="color-item" data-color="var(--neutral-800)" data-name="Neutral 800">
+                        <div class="color-preview" style="background: var(--neutral-800);"></div>
+                        <div class="color-info">
+                            <div class="color-name">800 - Dark BG</div>
+                            <div class="color-value">#1F2937</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Design Rationale Section -->
+        <div class="rationale-section">
+            <div class="rationale-header">
+                <div class="rationale-icon">
+                    <!-- Custom Sonic Spotlights Logo PNG -->
+                    <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+                </div>
+                <h2 class="rationale-title">Design Rationale</h2>
+            </div>
+            
+            <div class="rationale-content">
+                <div class="rationale-card">
+                    <h3><i class="fas fa-guitar"></i> Music Industry Alignment</h3>
+                    <p>Our color palette is designed to resonate with the creative energy of the music industry while maintaining the professionalism expected from a SaaS product.</p>
+                    
+                    <p><span class="color-pill pill-purple">Purple</span> represents creativity and innovation - core values for music creators. Historically associated with royalty and artistry, it positions our brand as premium and visionary.</p>
+                    
+                    <p><span class="color-pill pill-blue">Electric Blue</span> brings a technological edge, symbolizing the digital transformation of music creation and collaboration.</p>
+                    
+                    <p><span class="color-pill pill-gold">Amber Gold</span> adds warmth and energy, reflecting the passion and emotion inherent in music production.</p>
+                    
+                    <p><span class="color-pill pill-green">Emerald Green</span> provides balance, representing growth, harmony, and successful outcomes for creators.</p>
+                </div>
+                
+                <div class="rationale-card">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Considerations</h3>
+                    <p>This palette was designed with technical implementation and user experience as top priorities:</p>
+                    
+                    <ul>
+                        <li><strong>Accessibility:</strong> All colors meet WCAG AA contrast requirements for text readability</li>
+                        <li><strong>Adaptability:</strong> Works seamlessly in both light and dark modes</li>
+                        <li><strong>Consistency:</strong> Full ramps provided for consistent theming across components</li>
+                        <li><strong>Performance:</strong> Color system designed to work with CSS variables for easy theming</li>
+                        <li><strong>Integration:</strong> Extends GitLab Pajamas UI with minimal overrides</li>
+                    </ul>
+                    
+                    <p>The palette follows a systematic approach with primary, secondary, and neutral colors clearly defined for consistent implementation.</p>
+                </div>
+                
+                <div class="rationale-card">
+                    <h3><i class="fas fa-users"></i> User Experience Strategy</h3>
+                    <p>Each color serves specific functions to create intuitive user experiences:</p>
+                    
+                    <p><span class="color-pill pill-purple">Primary Purple</span> guides users to key actions - CTAs, navigation, and primary workflows. Its vibrancy creates focal points without overwhelming.</p>
+                    
+                    <p><span class="color-pill pill-blue">Electric Blue</span> indicates interactive elements, active states, and progress indicators. Its calming effect promotes focused work sessions.</p>
+                    
+                    <p><span class="color-pill pill-gold">Amber Gold</span> highlights premium features, warnings, and value propositions. Used sparingly (≤10% of UI) to maintain impact.</p>
+                    
+                    <p><span class="color-pill pill-green">Emerald Green</span> signals success, completion, and positive outcomes to reinforce user achievements.</p>
+                    
+                    <p>Neutrals provide clean backgrounds that let content and creative work shine.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="usage-examples">
+            <div class="example-card">
+                <h3 class="example-title"><i class="fas fa-paint-brush"></i> UI Elements Preview</h3>
+                <div class="ui-elements">
+                    <div class="element">
+                        <div class="element-label">Primary Action</div>
+                        <button class="btn btn-primary">Upload Track</button>
+                    </div>
+                    <div class="element">
+                        <div class="element-label">Secondary Action</div>
+                        <button class="btn btn-secondary">Share Project</button>
+                    </div>
+                    <div class="element">
+                        <div class="element-label">Premium Feature</div>
+                        <button class="btn btn-premium">Go Premium</button>
+                    </div>
+                    <div class="element">
+                        <div class="element-label">Success State</div>
+                        <div class="badge badge-success">Published</div>
+                    </div>
+                    <div class="element">
+                        <div class="element-label">Premium Badge</div>
+                        <div class="badge badge-premium">PRO</div>
+                    </div>
+                    <div class="element">
+                        <div class="element-label">Progress Indicator</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <h3 class="example-title"><i class="fas fa-code"></i> Implementation Notes</h3>
+                <div style="display: grid; gap: 20px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--purple-500); flex-shrink: 0;"></div>
+                        <div>
+                            <h4 style="margin-bottom: 8px; color: var(--purple-500);">Primary Color Usage</h4>
+                            <p>Replace GitLab's $blue-500 with our $purple-500 in brand variables. Use for primary buttons, navigation, and key brand elements.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--gold-500); flex-shrink: 0;"></div>
+                        <div>
+                            <h4 style="margin-bottom: 8px; color: var(--gold-500);">Premium Features</h4>
+                            <p>Use gold sparingly for premium features and upsell opportunities. Create visual hierarchy without overwhelming the UI.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--blue-500); flex-shrink: 0;"></div>
+                        <div>
+                            <h4 style="margin-bottom: 8px; color: var(--blue-500);">Interactive Elements</h4>
+                            <p>Apply electric blue to active states, progress indicators, and secondary actions. Creates clear affordances for interaction.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--green-500); flex-shrink: 0;"></div>
+                        <div>
+                            <h4 style="margin-bottom: 8px; color: var(--green-500);">Success States</h4>
+                            <p>Use emerald green for positive feedback, success messages, and completion indicators. Reinforces positive outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Sonic Spotlights Brand Colors | Designed for GitLab Pajamas Integration</p>
+            <p><small>Click any color to copy its value to clipboard</small></p>
+        </div>
+    </footer>
+    
+    <div class="color-copy-message" id="copyMessage">
+        <i class="fas fa-check-circle" style="color: var(--green-500);"></i> Color value copied to clipboard!
+    </div>
+    
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Set initial theme based on preference
+        if (isDarkModePreferred) {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            themeToggle.innerHTML = isDarkMode 
+                ? '<i class="fas fa-sun"></i> Light Mode' 
+                : '<i class="fas fa-moon"></i> Dark Mode';
+        });
+        
+        // Color filtering
+        const filterButtons = document.querySelectorAll('.control-btn');
+        const paletteCards = document.querySelectorAll('.palette-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter palettes
+                const filter = button.getAttribute('data-filter');
+                
+                paletteCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Color copy functionality
+        const colorItems = document.querySelectorAll('.color-item');
+        const copyMessage = document.getElementById('copyMessage');
+        
+        colorItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const colorValue = item.getAttribute('data-color').replace('var(', '').replace(')', '');
+                const computedColor = getComputedStyle(document.documentElement).getPropertyValue(colorValue);
+                const colorName = item.getAttribute('data-name');
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(computedColor.trim()).then(() => {
+                    // Show success message
+                    copyMessage.classList.add('show');
+                    
+                    // Hide after 2 seconds
+                    setTimeout(() => {
+                        copyMessage.classList.remove('show');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
