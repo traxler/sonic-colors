@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonic Spotlights Design System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --purple-500: #7E22CD;
@@ -16,10 +17,14 @@
             --neutral-500: #6B7280;
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
             --radius: 20px;
+            
+            /* Font variables */
+            --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: var(--font-body);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,6 +35,14 @@
             text-align: center;
             background: #f8f9fa;
             background-image: radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
         }
         
         .logo-container {
@@ -68,7 +81,6 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 10px;
-            font-weight: 700;
             letter-spacing: -0.02em;
         }
         
@@ -145,6 +157,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(126, 34, 205, 0.2);
+            font-family: var(--font-heading);
         }
         
         .btn:hover {
@@ -187,6 +200,7 @@
             color: var(--purple-700);
             font-weight: 600;
             z-index: 100;
+            font-family: var(--font-heading);
         }
         
         @media (max-width: 768px) {
