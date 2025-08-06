@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonic Spotlights Design System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --purple-500: #7E22CD;
+            --purple-800: #3B0764;
+            --blue-500: #3B82F6;
+            --gold-500: #F59E0B;
+            --green-500: #10B981;
             --neutral-800: #1F2937;
+            --neutral-500: #6B7280;
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --radius: 20px;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,80 +29,256 @@
             padding: 20px;
             text-align: center;
             background: #f8f9fa;
+            background-image: radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%);
         }
-        .logo {
-            width: 100px;
-            height: 100px;
+        
+        .logo-container {
             margin-bottom: 30px;
+            position: relative;
         }
-        h1 {
-            color: var(--purple-500);
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: var(--neutral-800);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        .nav-cards {
+        
+        .logo-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            border-radius: var(--radius);
             display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-        }
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            width: 300px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-lg);
+            margin: 0 auto 20px;
             transition: transform 0.3s ease;
         }
+        
+        .logo-icon:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+        
+        .logo-icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--neutral-500);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .nav-cards {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            width: 300px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--purple-500), var(--blue-500));
+        }
+        
         .card h2 {
-            color: var(--purple-500);
+            color: var(--purple-800);
             margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
+        
+        .card p {
+            color: var(--neutral-500);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 12px 30px;
-            background: var(--purple-500);
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 30px;
             font-weight: 600;
-            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(126, 34, 205, 0.2);
         }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(126, 34, 205, 0.3);
+        }
+        
+        .btn i {
+            font-size: 1.2rem;
+        }
+        
+        .colors-btn {
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+        }
+        
+        .typography-btn {
+            background: linear-gradient(135deg, var(--gold-500), var(--green-500));
+        }
+        
         footer {
-            margin-top: 50px;
-            color: var(--neutral-800);
+            margin-top: 80px;
+            color: var(--neutral-500);
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: var(--purple-700);
+            font-weight: 600;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-cards {
+                gap: 25px;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-icon {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
 <body>
-    <img class="logo" src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+    <button class="dark-mode-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i> Dark Mode
+    </button>
     
-    <h1>Sonic Spotlights Design System</h1>
-    <p class="subtitle">Complete design resources for consistent brand implementation across all products</p>
+    <div class="logo-container">
+        <div class="logo-icon">
+            <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+        </div>
+        <h1>Sonic Spotlights Design System</h1>
+        <p class="subtitle">Complete design resources for consistent brand implementation across all products and platforms</p>
+    </div>
     
     <div class="nav-cards">
         <div class="card">
-            <h2>Color System</h2>
-            <p>Our complete color palette with usage guidelines, accessibility specs, and implementation examples</p>
-            <a href="docs/colors.html" class="btn">View Colors</a>
+            <h2><i class="fas fa-palette"></i> Color System</h2>
+            <p>Our complete color palette with usage guidelines, accessibility specs, and implementation examples for both light and dark modes.</p>
+            <a href="docs/colors.html" class="btn colors-btn">
+                <i class="fas fa-arrow-right"></i> View Colors
+            </a>
         </div>
         
         <div class="card">
-            <h2>Typography</h2>
-            <p>Font system, type scale, and text styles for all interfaces and marketing materials</p>
-            <a href="docs/typography.html" class="btn">View Typography</a>
+            <h2><i class="fas fa-font"></i> Typography</h2>
+            <p>Font system, type scale, and text styles for all interfaces and marketing materials with accessibility considerations.</p>
+            <a href="docs/typography.html" class="btn typography-btn">
+                <i class="fas fa-arrow-right"></i> View Typography
+            </a>
         </div>
     </div>
     
     <footer>
-        <p>For internal use and partner implementation</p>
+        <p>For internal use and partner implementation | Design system version 1.0</p>
+        <p><small>Components will be added progressively as the product evolves</small></p>
     </footer>
+    
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            themeToggle.innerHTML = isDarkMode 
+                ? '<i class="fas fa-sun"></i> Light Mode' 
+                : '<i class="fas fa-moon"></i> Dark Mode';
+            
+            if (isDarkMode) {
+                body.style.backgroundColor = '#0F172A';
+                body.style.backgroundImage = 'radial-gradient(circle at 90% 80%, rgba(126, 34, 205, 0.05) 0%, rgba(126, 34, 205, 0) 30%)';
+                body.style.color = '#F1F5F9';
+            } else {
+                body.style.backgroundColor = '#f8f9fa';
+                body.style.backgroundImage = 'radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%)';
+                body.style.color = '#1F2937';
+            }
+        });
+    </script>
 </body>
 </html>
