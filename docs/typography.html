@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Color variables (from previous palette) */
+            /* Color variables (from palette) */
             --purple-500: #7E22CD;
             --purple-800: #3B0764;
             --purple-200: #D8B4FE;
@@ -44,15 +44,15 @@
             --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
             
             /* Size scale */
-            --text-xs: 0.75rem;   /* 12px */
-            --text-sm: 0.875rem;  /* 14px */
-            --text-base: 1rem;    /* 16px */
-            --text-lg: 1.125rem;  /* 18px */
-            --text-xl: 1.25rem;   /* 20px */
-            --text-2xl: 1.5rem;   /* 24px */
-            --text-3xl: 1.875rem; /* 30px */
-            --text-4xl: 2.25rem;  /* 36px */
-            --text-5xl: 3rem;     /* 48px */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
             
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -587,7 +587,7 @@
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">
-                        <!-- Custom Sonic Spotlights Logo -->
+                        <!-- Sonic Spotlights Logo -->
                         <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
                     </div>
                 </div>
@@ -842,11 +842,12 @@
     </div>
     
     <footer>
-        <div class="container">
-            <p>Sonic Spotlights Design System • Typography: Plus Jakarta Sans & Figtree</p>
-            <p><small>Click the moon/sun icon to toggle dark mode</small></p>
-        </div>
-    </footer>
+    <div class="container">
+        <p>Sonic Spotlights Design System • Typography: Plus Jakarta Sans & Figtree</p>
+        <p><a href="colors.html" style="color: var(--purple-500); text-decoration: none; font-weight: 600;">View Color System</a></p>
+        <p><small>Click the moon/sun icon to toggle dark mode</small></p>
+    </div>
+</footer>
     
     <script>
         // Theme toggle functionality
