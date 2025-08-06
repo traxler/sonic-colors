@@ -85,6 +85,11 @@
             font-weight: 400;
         }
         
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+        
         .dark-mode body {
             background-image: radial-gradient(circle at 90% 80%, rgba(126, 34, 205, 0.05) 0%, rgba(126, 34, 205, 0) 30%);
         }
@@ -140,7 +145,6 @@
         }
         
         h1 {
-            font-family: var(--font-heading);
             font-size: var(--text-4xl);
             background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
             -webkit-background-clip: text;
@@ -842,12 +846,12 @@
     </div>
     
     <footer>
-    <div class="container">
-        <p>Sonic Spotlights Design System • Typography: Plus Jakarta Sans & Figtree</p>
-        <p><a href="colors.html" style="color: var(--purple-500); text-decoration: none; font-weight: 600;">View Color System</a></p>
-        <p><small>Click the moon/sun icon to toggle dark mode</small></p>
-    </div>
-</footer>
+        <div class="container">
+            <p>Sonic Spotlights Design System • Typography: Plus Jakarta Sans & Figtree</p>
+            <p><a href="colors.html" style="color: var(--purple-500); text-decoration: none; font-weight: 600;">View Color System</a></p>
+            <p><small>Click the moon/sun icon to toggle dark mode</small></p>
+        </div>
+    </footer>
     
     <script>
         // Theme toggle functionality
