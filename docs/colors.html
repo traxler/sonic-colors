@@ -69,12 +69,20 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --radius: 12px;
             --transition: all 0.3s ease;
+            
+            /* NEW: Ethereal Gradients */
+            --gradient-purple-light: linear-gradient(135deg, rgba(216, 180, 254, 0.1) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(126, 34, 205, 0.08) 100%);
+            --gradient-purple-dark: linear-gradient(135deg, rgba(59, 7, 100, 0.2) 0%, rgba(45, 10, 80, 0.15) 50%, rgba(30, 10, 52, 0.1) 100%);
+            --gradient-amber-light: linear-gradient(135deg, rgba(252, 211, 77, 0.1) 0%, rgba(245, 158, 11, 0.07) 50%, rgba(180, 83, 9, 0.05) 100%);
+            --gradient-amber-dark: linear-gradient(135deg, rgba(180, 83, 9, 0.15) 0%, rgba(126, 58, 0, 0.12) 50%, rgba(92, 42, 0, 0.1) 100%);
         }
         
         .dark-mode {
             --current-bg: var(--bg-dark);
             --current-text: var(--text-dark);
             --current-card: var(--card-dark);
+            --gradient-purple-light: var(--gradient-purple-dark);
+            --gradient-amber-light: var(--gradient-amber-dark);
         }
         
         * {
@@ -342,6 +350,144 @@
         
         .dark-mode .color-value {
             color: var(--neutral-400);
+        }
+        
+        /* NEW: Gradient Section Styles */
+        .gradients-section {
+            background: var(--current-card);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gradients-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--purple-500), var(--blue-500));
+        }
+        
+        .gradients-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .gradients-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gradients-icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+        
+        .gradients-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .gradient-card {
+            background: rgba(126, 34, 205, 0.03);
+            border-radius: var(--radius);
+            padding: 25px;
+            overflow: hidden;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform 0.3s ease;
+        }
+        
+        .dark-mode .gradient-card {
+            background: rgba(126, 34, 205, 0.08);
+        }
+        
+        .gradient-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gradient-purple {
+            background: var(--gradient-purple-light);
+        }
+        
+        .gradient-amber {
+            background: var(--gradient-amber-light);
+        }
+        
+        .gradient-info {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .dark-mode .gradient-info {
+            background: rgba(30, 30, 46, 0.7);
+        }
+        
+        .gradient-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--purple-800);
+        }
+        
+        .dark-mode .gradient-name {
+            color: var(--purple-200);
+        }
+        
+        .gradient-desc {
+            color: var(--neutral-700);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .dark-mode .gradient-desc {
+            color: var(--neutral-300);
+        }
+        
+        .gradient-hues {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .gradient-hue {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         /* Rationale Section */
@@ -670,11 +816,11 @@
                 font-size: 2.4rem;
             }
             
-            .rationale-title {
+            .rationale-title, .gradients-title {
                 font-size: 1.8rem;
             }
             
-            .rationale-section {
+            .rationale-section, .gradients-section {
                 padding: 25px;
             }
             
@@ -898,6 +1044,80 @@
                         <div class="color-info">
                             <div class="color-name">800 - Dark BG</div>
                             <div class="color-value">#1F2937</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NEW: Ethereal Background Gradients Section -->
+        <div class="gradients-section">
+            <div class="gradients-header">
+                <div class="gradients-icon">
+                    <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+                </div>
+                <h2 class="gradients-title">Ethereal Background Gradients</h2>
+            </div>
+            
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--neutral-500);">Subtle gradients for section backgrounds, adding depth without distraction</p>
+            
+            <div class="gradients-grid">
+                <div class="gradient-card gradient-purple">
+                    <div class="gradient-info">
+                        <h3 class="gradient-name">Purple Nebula</h3>
+                        <p class="gradient-desc">A dreamy purple gradient for creative sections. Uses adjacent purple hues for a seamless ethereal effect.</p>
+                        <div class="gradient-hues">
+                            <div class="gradient-hue" style="background: rgba(216, 180, 254, 0.8);"></div>
+                            <div class="gradient-hue" style="background: rgba(168, 85, 247, 0.8);"></div>
+                            <div class="gradient-hue" style="background: rgba(126, 34, 205, 0.8);"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-card gradient-amber">
+                    <div class="gradient-info">
+                        <h3 class="gradient-name">Amber Glow</h3>
+                        <p class="gradient-desc">A warm amber gradient for premium features. Tints of gold create a soft, inviting atmosphere.</p>
+                        <div class="gradient-hues">
+                            <div class="gradient-hue" style="background: rgba(252, 211, 77, 0.8);"></div>
+                            <div class="gradient-hue" style="background: rgba(245, 158, 11, 0.8);"></div>
+                            <div class="gradient-hue" style="background: rgba(180, 83, 9, 0.8);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="usage-examples" style="margin-top: 40px;">
+                <div class="example-card">
+                    <h3 class="example-title"><i class="fas fa-lightbulb"></i> Gradient Usage Guidance</h3>
+                    <div style="display: grid; gap: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--purple-500); flex-shrink: 0;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 8px; color: var(--purple-500);">Creative Sections</h4>
+                                <p>Apply the Purple Nebula to creative workflow areas, music composition tools, and inspiration sections.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--gold-500); flex-shrink: 0;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 8px; color: var(--gold-500);">Premium Features</h4>
+                                <p>Use Amber Glow to highlight premium features, VIP sections, and exclusive content areas.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--blue-500); flex-shrink: 0;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 8px; color: var(--blue-500);">Subtle Enhancement</h4>
+                                <p>Apply gradients at 10-15% opacity for a ghostly effect that adds depth without distracting from content.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--green-500); flex-shrink: 0;"></div>
+                            <div>
+                                <h4 style="margin-bottom: 8px; color: var(--green-500);">Performance</h4>
+                                <p>Gradients are lightweight and render efficiently across all modern browsers and devices.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
