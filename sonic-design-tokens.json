@@ -1,0 +1,391 @@
+{
+  "global": {
+    "colors": {
+      "sonic": {
+        "purple": {
+          "500": {
+            "value": "#8b5cf6",
+            "type": "color",
+            "description": "Primary brand color for CTAs and key actions"
+          },
+          "600": {
+            "value": "#7c3aed",
+            "type": "color",
+            "description": "Primary hover state"
+          },
+          "700": {
+            "value": "#6d28d9",
+            "type": "color",
+            "description": "Primary pressed state"
+          }
+        },
+        "blue": {
+          "500": {
+            "value": "#06b6d4",
+            "type": "color",
+            "description": "Secondary color for tech features"
+          },
+          "600": {
+            "value": "#0891b2",
+            "type": "color",
+            "description": "Secondary hover state"
+          },
+          "700": {
+            "value": "#0e7490",
+            "type": "color",
+            "description": "Secondary pressed state"
+          }
+        },
+        "amber": {
+          "500": {
+            "value": "#f59e0b",
+            "type": "color",
+            "description": "Accent color for premium features"
+          },
+          "600": {
+            "value": "#f97316",
+            "type": "color",
+            "description": "Accent hover state"
+          },
+          "700": {
+            "value": "#ea580c",
+            "type": "color",
+            "description": "Accent pressed state"
+          }
+        },
+        "emerald": {
+          "500": {
+            "value": "#10b981",
+            "type": "color",
+            "description": "Success color"
+          },
+          "600": {
+            "value": "#059669",
+            "type": "color",
+            "description": "Success hover state"
+          },
+          "700": {
+            "value": "#047857",
+            "type": "color",
+            "description": "Success pressed state"
+          }
+        }
+      },
+      "neutral": {
+        "50": {
+          "value": "#f9fafb",
+          "type": "color",
+          "description": "Lightest background"
+        },
+        "100": {
+          "value": "#f3f4f6",
+          "type": "color",
+          "description": "Light background, card backgrounds"
+        },
+        "200": {
+          "value": "#e5e7eb",
+          "type": "color",
+          "description": "Subtle borders"
+        },
+        "300": {
+          "value": "#d1d5db",
+          "type": "color",
+          "description": "UI element borders"
+        },
+        "400": {
+          "value": "#9ca3af",
+          "type": "color",
+          "description": "Placeholder text"
+        },
+        "500": {
+          "value": "#6b7280",
+          "type": "color",
+          "description": "Secondary text"
+        },
+        "600": {
+          "value": "#4b5563",
+          "type": "color",
+          "description": "Secondary text darker"
+        },
+        "700": {
+          "value": "#374151",
+          "type": "color",
+          "description": "Body text"
+        },
+        "800": {
+          "value": "#1f2937",
+          "type": "color",
+          "description": "Primary text, headings"
+        },
+        "900": {
+          "value": "#111827",
+          "type": "color",
+          "description": "Darkest text"
+        }
+      }
+    },
+    "spacing": {
+      "xs": {
+        "value": "4px",
+        "type": "spacing",
+        "description": "Extra small spacing for borders and fine details"
+      },
+      "sm": {
+        "value": "8px",
+        "type": "spacing",
+        "description": "Small spacing for icon padding"
+      },
+      "md": {
+        "value": "16px",
+        "type": "spacing",
+        "description": "Medium spacing for component padding"
+      },
+      "lg": {
+        "value": "24px",
+        "type": "spacing",
+        "description": "Large spacing for card padding"
+      },
+      "xl": {
+        "value": "32px",
+        "type": "spacing",
+        "description": "Extra large spacing for sections"
+      },
+      "2xl": {
+        "value": "48px",
+        "type": "spacing",
+        "description": "2X large spacing for major divisions"
+      },
+      "3xl": {
+        "value": "64px",
+        "type": "spacing",
+        "description": "3X large spacing for hero sections"
+      },
+      "4xl": {
+        "value": "96px",
+        "type": "spacing",
+        "description": "4X large spacing for page headers"
+      }
+    },
+    "borderRadius": {
+      "none": {
+        "value": "0px",
+        "type": "borderRadius"
+      },
+      "sm": {
+        "value": "4px",
+        "type": "borderRadius",
+        "description": "Small radius for buttons and inputs"
+      },
+      "md": {
+        "value": "8px",
+        "type": "borderRadius",
+        "description": "Medium radius for cards"
+      },
+      "lg": {
+        "value": "12px",
+        "type": "borderRadius",
+        "description": "Large radius for prominent cards"
+      },
+      "xl": {
+        "value": "16px",
+        "type": "borderRadius",
+        "description": "Extra large radius for hero elements"
+      },
+      "2xl": {
+        "value": "24px",
+        "type": "borderRadius",
+        "description": "2X large radius for special elements"
+      },
+      "3xl": {
+        "value": "32px",
+        "type": "borderRadius",
+        "description": "3X large radius for app icons"
+      },
+      "full": {
+        "value": "9999px",
+        "type": "borderRadius",
+        "description": "Full radius for circles and pills"
+      }
+    },
+    "fontFamilies": {
+      "heading": {
+        "value": "Plus Jakarta Sans, Inter, system-ui, sans-serif",
+        "type": "fontFamilies",
+        "description": "Heading font stack"
+      },
+      "body": {
+        "value": "Figtree, Inter, system-ui, sans-serif", 
+        "type": "fontFamilies",
+        "description": "Body text font stack"
+      },
+      "mono": {
+        "value": "Monaco, Menlo, Consolas, monospace",
+        "type": "fontFamilies",
+        "description": "Monospace for code"
+      }
+    },
+    "fontWeights": {
+      "normal": {
+        "value": "400",
+        "type": "fontWeights"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeights"
+      },
+      "semibold": {
+        "value": "600",
+        "type": "fontWeights"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeights"
+      },
+      "extrabold": {
+        "value": "800",
+        "type": "fontWeights"
+      }
+    },
+    "fontSizes": {
+      "xs": {
+        "value": "12px",
+        "type": "fontSizes",
+        "description": "Caption text"
+      },
+      "sm": {
+        "value": "14px",
+        "type": "fontSizes",
+        "description": "Small body text"
+      },
+      "base": {
+        "value": "16px",
+        "type": "fontSizes",
+        "description": "Base body text"
+      },
+      "lg": {
+        "value": "18px",
+        "type": "fontSizes",
+        "description": "Large body text"
+      },
+      "xl": {
+        "value": "20px",
+        "type": "fontSizes",
+        "description": "H4 heading"
+      },
+      "2xl": {
+        "value": "24px",
+        "type": "fontSizes",
+        "description": "H3 heading"
+      },
+      "3xl": {
+        "value": "32px",
+        "type": "fontSizes",
+        "description": "H2 heading"
+      },
+      "4xl": {
+        "value": "48px",
+        "type": "fontSizes",
+        "description": "H1 heading"
+      }
+    },
+    "lineHeights": {
+      "tight": {
+        "value": "1.25",
+        "type": "lineHeights",
+        "description": "Tight leading for headings"
+      },
+      "normal": {
+        "value": "1.5",
+        "type": "lineHeights",
+        "description": "Normal leading for body"
+      },
+      "relaxed": {
+        "value": "1.625",
+        "type": "lineHeights",
+        "description": "Relaxed leading for long content"
+      }
+    },
+    "boxShadow": {
+      "sm": {
+        "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "type": "boxShadow",
+        "description": "Small shadow for subtle elevation"
+      },
+      "md": {
+        "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "type": "boxShadow",
+        "description": "Medium shadow for cards"
+      },
+      "lg": {
+        "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        "type": "boxShadow",
+        "description": "Large shadow for prominent elements"
+      },
+      "xl": {
+        "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        "type": "boxShadow",
+        "description": "Extra large shadow for modals"
+      }
+    }
+  },
+  "semantic": {
+    "colors": {
+      "text": {
+        "primary": {
+          "value": "{neutral.800}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{neutral.500}",
+          "type": "color"
+        },
+        "inverse": {
+          "value": "#ffffff",
+          "type": "color"
+        }
+      },
+      "background": {
+        "primary": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{neutral.50}",
+          "type": "color"
+        }
+      },
+      "border": {
+        "default": {
+          "value": "{neutral.200}",
+          "type": "color"
+        },
+        "strong": {
+          "value": "{neutral.300}",
+          "type": "color"
+        }
+      },
+      "interactive": {
+        "primary": {
+          "value": "{sonic.purple.500}",
+          "type": "color"
+        },
+        "primaryHover": {
+          "value": "{sonic.purple.600}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{sonic.blue.500}",
+          "type": "color"
+        },
+        "accent": {
+          "value": "{sonic.amber.500}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{sonic.emerald.500}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}
