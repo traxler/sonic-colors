@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Spotlights Typography System</title>
+    <title>Sonic Spotlights - Typography System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,39 +14,49 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --purple-500: #8b5cf6;
+            --purple-600: #7c3aed;
+            --purple-700: #6d28d9;
+            --blue-500: #06b6d4;
+            --amber-500: #f59e0b;
+            --emerald-500: #10b981;
+            --neutral-50: #f9fafb;
+            --neutral-100: #f3f4f6;
+            --neutral-200: #e5e7eb;
+            --neutral-500: #6b7280;
+            --neutral-700: #374151;
+            --neutral-800: #1f2937;
+            --neutral-900: #111827;
+        }
+
         body {
             font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             background: #ffffff;
-            color: #1a1a1a;
+            color: var(--neutral-800);
             transition: all 0.3s ease;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .theme-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #8b5cf6;
+            background: var(--purple-500);
             color: white;
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
             transition: all 0.3s ease;
             z-index: 1000;
-            font-family: 'Figtree', sans-serif;
         }
 
         .theme-toggle:hover {
-            background: #7c3aed;
+            background: var(--purple-600);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
         }
 
         .container {
@@ -66,25 +75,27 @@
         .app-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, var(--purple-500) 0%, var(--blue-500) 50%, var(--amber-500) 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+            flex-shrink: 0;
         }
 
-        .app-icon img {
-            width: 60px;
-            height: 60px;
-            display: block;
+        .logo-svg {
+            width: 50px;
+            height: 50px;
+            fill: white;
         }
 
         .header-content h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, var(--purple-500) 0%, var(--blue-500) 50%, var(--amber-500) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -92,8 +103,8 @@
 
         .subtitle {
             font-size: 1.2rem;
-            color: #6b7280;
-            font-weight: 500;
+            color: var(--neutral-500);
+            font-family: 'Figtree', sans-serif;
         }
 
         .section {
@@ -101,483 +112,276 @@
         }
 
         .section h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #1f2937;
+            color: var(--neutral-800);
         }
 
-        /* Typography Cards */
+        /* Typography Showcase Styles */
         .typography-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 3rem;
         }
 
-        .typography-card {
-            background: #f9fafb;
+        .type-specimen {
+            padding: 2rem;
+            background: var(--neutral-50);
             border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--neutral-200);
             transition: all 0.3s ease;
         }
 
-        .typography-card:hover {
-            transform: translateY(-4px);
+        .type-specimen:hover {
+            transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
+        .type-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
-            color: #374151;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .type-label {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 600;
+            color: var(--purple-600);
+            font-size: 0.9rem;
         }
 
-        .card-title i {
-            color: #8b5cf6;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(139, 92, 246, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .type-details {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.8rem;
+            color: var(--neutral-500);
         }
 
-        .type-sample {
+        .type-usage {
+            font-size: 0.85rem;
+            color: var(--neutral-500);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Display Styles */
+        .display-hero {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--neutral-900);
+            margin: 0;
+        }
+
+        .display-large {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--neutral-900);
+            margin: 0;
+        }
+
+        /* Heading Styles */
+        .heading-h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--neutral-800);
+            margin: 0;
+        }
+
+        .heading-h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--neutral-800);
+            margin: 0;
+        }
+
+        .heading-h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--neutral-800);
+            margin: 0;
+        }
+
+        .heading-h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--neutral-800);
+            margin: 0;
+        }
+
+        /* Body Styles */
+        .body-large {
+            font-family: 'Figtree', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--neutral-700);
+            margin: 0;
+        }
+
+        .body-default {
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--neutral-700);
+            margin: 0;
+        }
+
+        .body-small {
+            font-family: 'Figtree', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--neutral-700);
+            margin: 0;
+        }
+
+        .caption {
+            font-family: 'Figtree', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--neutral-500);
+            margin: 0;
+        }
+
+        /* Application Examples */
+        .application-examples {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin: 3rem 0;
+        }
+
+        .example-interface {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        .example-header {
             margin-bottom: 1.5rem;
         }
 
-        .type-sample h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #7c3aed;
-        }
-
-        .type-preview {
-            padding: 1rem;
-            border-radius: 8px;
-            background: white;
-            margin-bottom: 0.75rem;
-            border: 1px solid #e5e7eb;
-        }
-
-        .type-specs {
-            display: flex;
+        .example-content {
+            display: grid;
             gap: 1rem;
-            font-size: 0.8rem;
-            color: #6b7280;
-            flex-wrap: wrap;
-        }
-
-        .type-specs span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
         }
 
         /* Rationale Section */
+        .rationale-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin-bottom: 3rem;
+        }
+
         .rationale-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-top: 1.5rem;
         }
 
         .rationale-card {
-            background: #f9fafb;
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid #e5e7eb;
-        }
-
-        .rationale-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #374151;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .rationale-card h3 i {
-            color: #8b5cf6;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(139, 92, 246, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .rationale-card p {
-            margin-bottom: 1rem;
-            color: #6b7280;
-        }
-
-        .rationale-card ul {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-
-        .rationale-card ul li {
-            margin-bottom: 0.5rem;
-            color: #6b7280;
-        }
-
-        .rationale-card ul li::marker {
-            color: #8b5cf6;
-        }
-
-        /* Usage Examples */
-        .usage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .usage-card {
             background: white;
-            border-radius: 16px;
             padding: 1.5rem;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .usage-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1f2937;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Form Elements */
-        .element {
-            margin-bottom: 1.5rem;
-        }
-
-        .input-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-            display: block;
-            color: #6b7280;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            background: white;
-            color: #1f2937;
-            font-family: 'Figtree', sans-serif;
-        }
-
-        .hint-text {
-            font-size: 0.75rem;
-            color: #6b7280;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 0.5rem;
-        }
-
-        .error-text {
-            font-size: 0.75rem;
-            color: #ef4444;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 0.5rem;
-        }
-
-        .legal-text {
-            font-size: 0.75rem;
-            color: #6b7280;
-            line-height: 1.4;
-            margin-top: 1rem;
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 12px 20px;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .btn-primary {
-            background: #8b5cf6;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: #06b6d4;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #0891b2;
-            transform: translateY(-2px);
-        }
-
-        .btn-premium {
-            background: #f59e0b;
-            color: white;
-        }
-
-        .btn-premium:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-        }
-
-        /* Badges */
-        .badge {
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-align: center;
-            display: inline-block;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .badge-success {
-            background: #10b981;
-            color: white;
-        }
-
-        .badge-premium {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-        }
-
-        /* Table */
-        .table-container {
-            overflow-x: auto;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .table-header {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: rgba(139, 92, 246, 0.05);
-            color: #374151;
-        }
-
-        .table-header th {
-            padding: 12px 16px;
-            text-align: left;
-        }
-
-        .table-row {
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .table-row:nth-child(even) {
-            background: rgba(139, 92, 246, 0.03);
-        }
-
-        .table-cell {
-            padding: 12px 16px;
-            font-size: 0.875rem;
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(139, 92, 246, 0.05);
             border-radius: 12px;
-            margin: 1rem 0;
+            border: 1px solid var(--neutral-200);
         }
 
-        .empty-state-icon {
-            font-size: 2.5rem;
-            color: #9ca3af;
-            margin-bottom: 1rem;
-        }
-
-        .empty-state-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+        .rationale-card h4 {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--purple-600);
+            margin-bottom: 0.5rem;
         }
 
-        /* Loading State */
-        .loading-text {
-            background: linear-gradient(
-                90deg,
-                #e5e7eb 25%,
-                #d1d5db 50%,
-                #e5e7eb 75%
-            );
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-            border-radius: 4px;
-            color: transparent !important;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        /* Demo Section */
-        .demo-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .demo-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .demo-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .demo-card {
-            padding: 1.5rem;
+        /* Accessibility Note */
+        .accessibility-note {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
             border-radius: 8px;
-            border: 1px solid;
+            padding: 1.5rem;
+            color: #065f46;
+            margin-top: 3rem;
         }
 
-        .demo-creative {
-            background: rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .demo-tech {
-            background: rgba(6, 182, 212, 0.1);
-            border-color: rgba(6, 182, 212, 0.3);
-        }
-
-        .demo-premium {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: rgba(245, 158, 11, 0.3);
-        }
-
-        .demo-success {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-
-        .demo-card h4 {
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+        .accessibility-note h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 0.5rem;
         }
 
-        .demo-card p {
-            font-size: 0.9rem;
-        }
-
-        /* Dark Theme */
+        /* Dark theme */
         body.dark-theme {
             background: #0f0f23;
             color: #e2e8f0;
+        }
+
+        body.dark-theme .type-specimen {
+            background: #1e1b4b;
+            border-color: #312e81;
         }
 
         body.dark-theme .section h2 {
             color: #f1f5f9;
         }
 
-        body.dark-theme .typography-card,
-        body.dark-theme .rationale-card,
-        body.dark-theme .usage-card {
-            background: #1e1b4b;
-            border-color: #312e81;
+        body.dark-theme .display-hero,
+        body.dark-theme .display-large,
+        body.dark-theme .heading-h1,
+        body.dark-theme .heading-h2,
+        body.dark-theme .heading-h3,
+        body.dark-theme .heading-h4 {
+            color: #f1f5f9;
         }
 
-        body.dark-theme .card-title,
-        body.dark-theme .rationale-card h3,
-        body.dark-theme .usage-card h3 {
-            color: #e2e8f0;
+        body.dark-theme .body-large,
+        body.dark-theme .body-default,
+        body.dark-theme .body-small {
+            color: #cbd5e1;
         }
 
-        body.dark-theme .type-preview {
-            background: #312e81;
-            border-color: #4c1d95;
-            color: #e2e8f0;
-        }
-
-        body.dark-theme input,
-        body.dark-theme textarea,
-        body.dark-theme select {
-            background: #312e81;
-            border-color: #4c1d95;
-            color: #e2e8f0;
-        }
-
-        body.dark-theme .subtitle,
-        body.dark-theme .rationale-card p,
-        body.dark-theme .rationale-card ul li,
-        body.dark-theme .hint-text,
-        body.dark-theme .legal-text {
+        body.dark-theme .caption {
             color: #94a3b8;
         }
 
-        body.dark-theme .demo-section {
+        body.dark-theme .rationale-section,
+        body.dark-theme .application-examples {
             background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
             border-color: #4c1d95;
         }
 
-        body.dark-theme .empty-state {
-            background: rgba(139, 92, 246, 0.1);
+        body.dark-theme .example-interface,
+        body.dark-theme .rationale-card {
+            background: #1e1b4b;
+            border-color: #312e81;
         }
 
-        body.dark-theme .loading-text {
-            background: linear-gradient(
-                90deg,
-                #374151 25%,
-                #4b5563 50%,
-                #374151 75%
-            );
+        body.dark-theme .accessibility-note {
+            background: #022c22;
+            border-color: #065f46;
+            color: #6ee7b7;
         }
 
         @media (max-width: 768px) {
@@ -590,18 +394,24 @@
             .header-content h1 {
                 font-size: 2rem;
             }
-            
-            .typography-grid,
-            .rationale-grid,
-            .usage-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .demo-buttons {
-                flex-direction: column;
+
+            .display-hero {
+                font-size: 40px;
             }
 
-            .demo-examples {
+            .display-large {
+                font-size: 36px;
+            }
+
+            .heading-h1 {
+                font-size: 32px;
+            }
+
+            .heading-h2 {
+                font-size: 24px;
+            }
+
+            .rationale-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -613,346 +423,170 @@
     <div class="container">
         <div class="header">
             <div class="app-icon">
-                <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 20 C40 10, 60 10, 70 20 C80 30, 80 50, 70 60 L50 80 L30 60 C20 50, 20 30, 30 20 Z" fill="currentColor"/>
+                    <circle cx="50" cy="40" r="15" fill="currentColor" opacity="0.7"/>
+                    <path d="M35 70 Q50 85, 65 70" stroke="currentColor" stroke-width="3" fill="none"/>
+                </svg>
             </div>
             <div class="header-content">
-                <h1>Sonic Spotlights Typography System</h1>
-                <p class="subtitle">Headings: Plus Jakarta Sans • Body: Figtree</p>
+                <h1>Typography System</h1>
+                <p class="subtitle">Plus Jakarta Sans & Figtree • Optimized for Music Production Interfaces</p>
             </div>
         </div>
 
         <section class="section">
-            <h2>Type Scale & Usage</h2>
+            <h2>Type Scale & Hierarchy</h2>
             
             <div class="typography-grid">
-                <div class="typography-card">
-                    <h3 class="card-title"><i class="fas fa-heading"></i> Headings</h3>
-                    
-                    <div class="type-sample">
-                        <h4>Heading 1</h4>
-                        <div class="type-preview">
-                            <h1 style="margin: 0;">Create Your Next Hit</h1>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Plus Jakarta Sans</span>
-                            <span><i class="fas fa-weight-hanging"></i> 700</span>
-                            <span><i class="fas fa-ruler"></i> 2.25rem (36px)</span>
-                        </div>
+                <!-- Display Styles -->
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Display/Hero</span>
+                        <span class="type-details">Plus Jakarta Sans • 64px • 800 weight</span>
                     </div>
-                    
-                    <div class="type-sample">
-                        <h4>Heading 2</h4>
-                        <div class="type-preview">
-                            <h2 style="margin: 0;">Collaborate in Real-Time</h2>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Plus Jakarta Sans</span>
-                            <span><i class="fas fa-weight-hanging"></i> 600</span>
-                            <span><i class="fas fa-ruler"></i> 1.875rem (30px)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="type-sample">
-                        <h4>Heading 3</h4>
-                        <div class="type-preview">
-                            <h3 style="margin: 0;">Mastering Tools</h3>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Plus Jakarta Sans</span>
-                            <span><i class="fas fa-weight-hanging"></i> 600</span>
-                            <span><i class="fas fa-ruler"></i> 1.5rem (24px)</span>
-                        </div>
-                    </div>
+                    <div class="display-hero">Collaborate. Create. Share.</div>
+                    <div class="type-usage">Use for: Landing page heroes, major announcements, brand statements</div>
                 </div>
-                
-                <div class="typography-card">
-                    <h3 class="card-title"><i class="fas fa-paragraph"></i> Body & UI Text</h3>
-                    
-                    <div class="type-sample">
-                        <h4>Body Text</h4>
-                        <div class="type-preview">
-                            <p style="margin: 0;">Sonic Spotlights empowers music creators with collaborative tools that streamline production. Share projects, get feedback in real-time, and publish your tracks directly to streaming platforms.</p>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Figtree</span>
-                            <span><i class="fas fa-weight-hanging"></i> 400</span>
-                            <span><i class="fas fa-ruler"></i> 1rem (16px)</span>
-                        </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Display/Large</span>
+                        <span class="type-details">Plus Jakarta Sans • 56px • 700 weight</span>
                     </div>
-                    
-                    <div class="type-sample">
-                        <h4>Small Text</h4>
-                        <div class="type-preview">
-                            <p style="margin: 0; font-size: 0.875rem;">Last saved 2 minutes ago • Auto-save enabled</p>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Figtree</span>
-                            <span><i class="fas fa-weight-hanging"></i> 400</span>
-                            <span><i class="fas fa-ruler"></i> 0.875rem (14px)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="type-sample">
-                        <h4>Lead Paragraph</h4>
-                        <div class="type-preview">
-                            <p style="margin: 0; font-size: 1.125rem; font-weight: 400;">Our platform combines professional tools with an intuitive interface, making music creation accessible to everyone from bedroom producers to professional studios.</p>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Figtree</span>
-                            <span><i class="fas fa-weight-hanging"></i> 400</span>
-                            <span><i class="fas fa-ruler"></i> 1.125rem (18px)</span>
-                        </div>
-                    </div>
+                    <div class="display-large">Summer Hits 2024</div>
+                    <div class="type-usage">Use for: Feature headlines, playlist titles, artist names, album covers</div>
                 </div>
-                
-                <div class="typography-card">
-                    <h3 class="card-title"><i class="fas fa-bold"></i> Emphasis & UI Elements</h3>
-                    
-                    <div class="type-sample">
-                        <h4>Bold Emphasis</h4>
-                        <div class="type-preview">
-                            <p style="margin: 0;">Collaborate with <strong>unlimited team members</strong> on premium plans. All projects include <strong>cloud storage</strong> and version history.</p>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Figtree</span>
-                            <span><i class="fas fa-weight-hanging"></i> 600</span>
-                        </div>
+
+                <!-- Heading Styles -->
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Heading/H1</span>
+                        <span class="type-details">Plus Jakarta Sans • 48px • 700 weight</span>
                     </div>
-                    
-                    <div class="type-sample">
-                        <h4>Buttons & Controls</h4>
-                        <div class="type-preview">
-                            <button class="btn btn-primary" style="margin-bottom: 10px;">Create New Project</button>
-                            <button class="btn btn-secondary">Share</button>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Plus Jakarta Sans</span>
-                            <span><i class="fas fa-weight-hanging"></i> 600</span>
-                        </div>
+                    <div class="heading-h1">Your Studio Dashboard</div>
+                    <div class="type-usage">Use for: Page titles, main dashboard headers</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Heading/H2</span>
+                        <span class="type-details">Plus Jakarta Sans • 32px • 700 weight</span>
                     </div>
-                    
-                    <div class="type-sample">
-                        <h4>Labels & Badges</h4>
-                        <div class="type-preview">
-                            <div class="badge badge-success">Published</div>
-                            <div class="badge badge-premium" style="margin-left: 10px;">PRO</div>
-                        </div>
-                        <div class="type-specs">
-                            <span><i class="fas fa-font"></i> Plus Jakarta Sans</span>
-                            <span><i class="fas fa-weight-hanging"></i> 600</span>
-                            <span><i class="fas fa-ruler"></i> 0.875rem (14px)</span>
-                        </div>
+                    <div class="heading-h2">Recent Projects</div>
+                    <div class="type-usage">Use for: Section headers, card group titles</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Heading/H3</span>
+                        <span class="type-details">Plus Jakarta Sans • 24px • 600 weight</span>
                     </div>
+                    <div class="heading-h3">Track Settings</div>
+                    <div class="type-usage">Use for: Component headers, form section titles</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Heading/H4</span>
+                        <span class="type-details">Plus Jakarta Sans • 20px • 600 weight</span>
+                    </div>
+                    <div class="heading-h4">Audio Controls</div>
+                    <div class="type-usage">Use for: Subsection titles, widget headers</div>
+                </div>
+
+                <!-- Body Styles -->
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Body/Large</span>
+                        <span class="type-details">Figtree • 18px • 400 weight</span>
+                    </div>
+                    <div class="body-large">Sonic Spotlights empowers music creators with collaborative tools that streamline production. Share projects, get feedback in real-time, and publish your tracks directly to streaming platforms.</div>
+                    <div class="type-usage">Use for: Lead paragraphs, important descriptions, intro text</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Body/Default</span>
+                        <span class="type-details">Figtree • 16px • 400 weight</span>
+                    </div>
+                    <div class="body-default">Our platform combines professional tools with an intuitive interface, making music creation accessible to everyone from bedroom producers to professional studios.</div>
+                    <div class="type-usage">Use for: Standard body text, descriptions, form labels</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Body/Small</span>
+                        <span class="type-details">Figtree • 14px • 400 weight</span>
+                    </div>
+                    <div class="body-small">Collaborate with unlimited team members on premium plans. All projects include cloud storage and version history.</div>
+                    <div class="type-usage">Use for: Supporting text, metadata, secondary information</div>
+                </div>
+
+                <div class="type-specimen">
+                    <div class="type-info">
+                        <span class="type-label">Caption</span>
+                        <span class="type-details">Figtree • 12px • 400 weight</span>
+                    </div>
+                    <div class="caption">Last saved 2 minutes ago • Auto-save enabled</div>
+                    <div class="type-usage">Use for: Timestamps, status indicators, fine print, tooltips</div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Design Rationale</h2>
+        <section class="rationale-section">
+            <h2>🎵 Typography Rationale</h2>
+            <p>The Plus Jakarta Sans and Figtree pairing strikes a perfect balance between creative expression and professional reliability.</p>
             
             <div class="rationale-grid">
                 <div class="rationale-card">
-                    <h3><i class="fas fa-music"></i> Creative Professionalism</h3>
-                    <p>The Plus Jakarta Sans and Figtree pairing strikes a perfect balance between creative expression and professional reliability.</p>
-                    
-                    <p><strong>Plus Jakarta Sans</strong> provides a structured, confident foundation for our interface with its clean geometric forms. The subtle rounded corners add just enough approachability without sacrificing professionalism.</p>
-                    
-                    <p><strong>Figtree</strong> complements this with its warm, humanist qualities. The open letterforms and generous spacing create excellent readability for longer content like project descriptions and documentation.</p>
-                    
-                    <p>Together, they embody our brand values: innovation meets accessibility, professionalism meets creativity.</p>
+                    <h4>Plus Jakarta Sans (Headings)</h4>
+                    <p>Provides a structured, confident foundation for our interface with its clean geometric forms. The subtle rounded corners add just enough approachability without sacrificing professionalism.</p>
                 </div>
                 
                 <div class="rationale-card">
-                    <h3><i class="fas fa-universal-access"></i> Accessibility</h3>
-                    <p>This typography system exceeds WCAG 2.1 AA standards with these accessibility features:</p>
-                    
-                    <ul>
-                        <li><strong>Optimal x-height</strong>: Both fonts have tall x-heights, improving character recognition</li>
-                        <li><strong>Character distinction</strong>: Clear differentiation between similar characters (1/l/I, 0/O)</li>
-                        <li><strong>Weight contrast</strong>: Heading/body weight ratio of 600:400 provides clear hierarchy</li>
-                        <li><strong>Line length control</strong>: Max 70 characters per line for readability</li>
-                        <li><strong>Line height</strong>: 1.6 for body text enhances scanning</li>
-                        <li><strong>Size progression</strong>: Clear heading scale establishes information hierarchy</li>
-                    </ul>
-                    
-                    <p>The system maintains 4.5:1 contrast ratio for body text and 3:1 for headings against backgrounds in both light and dark modes.</p>
+                    <h4>Figtree (Body Text)</h4>
+                    <p>Complements this with its warm, humanist qualities. The open letterforms and generous spacing create excellent readability for longer content like project descriptions and documentation.</p>
                 </div>
                 
                 <div class="rationale-card">
-                    <h3><i class="fas fa-users"></i> User Experience</h3>
-                    <p>This typography system enhances our SaaS experience in several key ways:</p>
-                    
-                    <ul>
-                        <li><strong>Quick scanning</strong>: Heading hierarchy helps users navigate complex interfaces</li>
-                        <li><strong>Reduced fatigue</strong>: Figtree's open forms and spacing minimize reading fatigue during long sessions</li>
-                        <li><strong>Clear affordances</strong>: Button text uses Jakarta Sans at 600 weight for clear CTAs</li>
-                        <li><strong>Contextual emphasis</strong>: Strategic use of weight and color directs attention</li>
-                        <li><strong>Multi-device rendering</strong>: Fonts maintain clarity on all screen densities</li>
-                    </ul>
-                    
-                    <p>The combination creates a rhythm that guides users through workflows while maintaining the creative energy essential to music production.</p>
+                    <h4>Together</h4>
+                    <p>They embody our brand values: innovation meets accessibility, professionalism meets creativity. The combination creates a rhythm that guides users through workflows while maintaining the creative energy essential to music production.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>SaaS Component Showcase</h2>
+        <section class="application-examples">
+            <h2>Real-World Application</h2>
             
-            <div class="usage-grid">
-                <div class="usage-card">
-                    <h3><i class="fas fa-edit"></i> Form Elements</h3>
-                    <div class="element">
-                        <label class="input-label">Project Name</label>
-                        <input type="text" placeholder="Enter project name">
-                        <p class="hint-text"><i class="fas fa-info-circle"></i> Use a descriptive name for your project</p>
-                    </div>
-                    
-                    <div class="element">
-                        <label class="input-label">Project Description</label>
-                        <textarea placeholder="Describe your project" style="min-height: 100px;"></textarea>
-                    </div>
-                    
-                    <div class="element">
-                        <label class="input-label">Project Type</label>
-                        <select>
-                            <option>Select project type</option>
-                            <option>Single Track</option>
-                            <option>EP</option>
-                            <option>Album</option>
-                        </select>
-                        <p class="error-text"><i class="fas fa-exclamation-circle"></i> Please select a project type</p>
-                    </div>
-                    
-                    <div class="element">
-                        <button class="btn btn-primary">Save Project</button>
-                        <p class="legal-text">By saving, you agree to our Terms of Service and Privacy Policy.</p>
-                    </div>
+            <div class="example-interface">
+                <div class="example-header">
+                    <div class="heading-h2">New Project</div>
+                    <div class="caption">Create your next musical masterpiece</div>
                 </div>
-                
-                <div class="usage-card">
-                    <h3><i class="fas fa-table"></i> Data Table</h3>
-                    <div class="table-container">
-                        <table>
-                            <thead class="table-header">
-                                <tr>
-                                    <th>Project</th>
-                                    <th>Status</th>
-                                    <th>Last Modified</th>
-                                    <th>Collaborators</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-row">
-                                    <td class="table-cell">Summer Vibes</td>
-                                    <td class="table-cell"><div class="badge badge-success">Published</div></td>
-                                    <td class="table-cell">2 days ago</td>
-                                    <td class="table-cell">3</td>
-                                </tr>
-                                <tr class="table-row">
-                                    <td class="table-cell">Midnight Groove</td>
-                                    <td class="table-cell"><div class="badge badge-premium">In Progress</div></td>
-                                    <td class="table-cell">5 hours ago</td>
-                                    <td class="table-cell">5</td>
-                                </tr>
-                                <tr class="table-row">
-                                    <td class="table-cell">Urban Echoes</td>
-                                    <td class="table-cell"><div class="badge">Draft</div></td>
-                                    <td class="table-cell">1 week ago</td>
-                                    <td class="table-cell">1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <h3 style="margin-top: 30px;"><i class="fas fa-chart-bar"></i> Data Visualization</h3>
-                    <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 8px; font-family: 'Plus Jakarta Sans', sans-serif;">Project Activity</h4>
-                    <div style="display: flex; align-items: flex-end; height: 150px; gap: 15px; margin-top: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 25px;">
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-                            <div style="background: #8b5cf6; height: 90px; width: 25px; border-radius: 5px 5px 0 0;"></div>
-                            <p style="font-size: 0.75rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 8px;">Mon</p>
-                        </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-                            <div style="background: #8b5cf6; height: 120px; width: 25px; border-radius: 5px 5px 0 0;"></div>
-                            <p style="font-size: 0.75rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 8px;">Tue</p>
-                        </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-                            <div style="background: #8b5cf6; height: 60px; width: 25px; border-radius: 5px 5px 0 0;"></div>
-                            <p style="font-size: 0.75rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 8px;">Wed</p>
-                        </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-                            <div style="background: #8b5cf6; height: 140px; width: 25px; border-radius: 5px 5px 0 0;"></div>
-                            <p style="font-size: 0.75rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 8px;">Thu</p>
-                        </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-                            <div style="background: #8b5cf6; height: 105px; width: 25px; border-radius: 5px 5px 0 0;"></div>
-                            <p style="font-size: 0.75rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 8px;">Fri</p>
-                        </div>
-                    </div>
+                <div class="example-content">
+                    <div class="body-default" style="margin-bottom: 1rem;">Use a descriptive name for your project</div>
+                    <div class="body-small" style="color: var(--neutral-500);">Please select a project type</div>
+                    <div class="caption" style="margin-top: 1rem;">By saving, you agree to our Terms of Service and Privacy Policy.</div>
                 </div>
-                
-                <div class="usage-card">
-                    <h3><i class="fas fa-layer-group"></i> Application States</h3>
-                    
-                    <div class="empty-state">
-                        <div class="empty-state-icon">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <h3 class="empty-state-title">No Projects Yet</h3>
-                        <p>You haven't created any projects. Start your music journey by creating your first project.</p>
-                        <button class="btn btn-primary" style="margin-top: 20px;">Create First Project</button>
-                    </div>
-                    
-                    <h3 style="margin-top: 30px;"><i class="fas fa-spinner"></i> Loading State</h3>
-                    <div style="padding: 20px; background: rgba(139, 92, 246, 0.05); border-radius: 8px;">
-                        <div class="loading-text" style="height: 24px; width: 60%; margin-bottom: 15px;"></div>
-                        <div class="loading-text" style="height: 16px; width: 80%; margin-bottom: 10px;"></div>
-                        <div class="loading-text" style="height: 16px; width: 70%; margin-bottom: 10px;"></div>
-                        <div class="loading-text" style="height: 16px; width: 75%;"></div>
-                    </div>
-                    
-                    <h3 style="margin-top: 30px;"><i class="fas fa-globe"></i> Localization</h3>
-                    <div style="padding: 20px; background: rgba(139, 92, 246, 0.05); border-radius: 8px;">
-                        <p><strong>Japanese (日本語)</strong></p>
-                        <p style="font-family: 'Noto Sans JP', 'Figtree', sans-serif; line-height: 1.8;">ソニックスポットライトは、音楽制作を革新するコラボレーションプラットフォームです。リアルタイムのフィードバック、直感的なツール、そしてシームレスな公開機能を提供します。</p>
-                        
-                        <p style="margin-top: 20px;"><strong>Arabic (العربية)</strong></p>
-                        <p style="font-family: 'Noto Sans Arabic', 'Figtree', sans-serif; direction: rtl;">تقدم سونيك سبوتلايتس منصة تعاونية مبتكرة لصناعة الموسيقى. مع أدوات بديهية وملاحظات في الوقت الحقيقي ونشر سلس، نحن نعزز إبداعك الموسيقي.</p>
-                    </div>
+            </div>
+
+            <div class="example-interface">
+                <div class="example-header">
+                    <div class="heading-h3">Project Dashboard</div>
+                </div>
+                <div class="example-content">
+                    <div class="body-large" style="margin-bottom: 1rem;">Summer Vibes - Published</div>
+                    <div class="body-default">A collaborative hip-hop track featuring live instrumentation and vocal harmonies.</div>
+                    <div class="body-small" style="margin-top: 0.5rem;">Last modified: 2 days ago • 3 collaborators</div>
                 </div>
             </div>
         </section>
 
-        <div class="demo-section">
-            <h2>UI Elements Preview</h2>
-            <p style="margin-bottom: 1.5rem;">Experience how the typography system works across different interface elements:</p>
-            
-            <div class="demo-buttons">
-                <button class="btn btn-primary">🎵 Upload Track</button>
-                <button class="btn btn-secondary">⚡ Share Project</button>
-                <button class="btn btn-premium">⭐ Go Premium</button>
-            </div>
-
-            <div class="demo-examples">
-                <div class="demo-card demo-creative">
-                    <h4 style="color: #7c3aed;">🎵 Creative Workflow</h4>
-                    <p>Purple Nebula gradient background creates an inspiring atmosphere for composition tools.</p>
-                </div>
-                
-                <div class="demo-card demo-tech">
-                    <h4 style="color: #0891b2;">⚡ Tech Features</h4>
-                    <p>Electric Blue indicates interactive elements and digital collaboration tools.</p>
-                </div>
-                
-                <div class="demo-card demo-premium">
-                    <h4 style="color: #d97706;">⭐ Premium Content</h4>
-                    <p>Amber Glow highlights exclusive features and value propositions.</p>
-                </div>
-                
-                <div class="demo-card demo-success">
-                    <h4 style="color: #059669;">✅ Success States</h4>
-                    <p>Emerald Green reinforces achievements and positive outcomes.</p>
-                </div>
-            </div>
+        <div class="accessibility-note">
+            <h3>♿ Accessibility & Performance</h3>
+            <p><strong>WCAG 2.1 AA Compliance:</strong> This typography system exceeds accessibility standards with 4.5:1 contrast ratio for body text and 3:1 for headings against backgrounds in both light and dark modes.</p>
+            <p style="margin-top: 0.5rem;"><strong>Performance:</strong> Both font families are optimized for web delivery and include variable font options for enhanced loading performance.</p>
         </div>
     </div>
 
@@ -969,47 +603,6 @@
 
         // Add smooth scroll behavior
         document.documentElement.style.scrollBehavior = 'smooth';
-        
-        // Add click animations to demo buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.style.position = 'absolute';
-                ripple.style.background = 'rgba(255,255,255,0.4)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.borderRadius = '50%';
-                ripple.style.pointerEvents = 'none';
-                ripple.style.animation = 'ripple 0.6s linear';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-        
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
