@@ -4,121 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonic Spotlights Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --purple-500: #7E22CD;
-            --purple-800: #3B0764;
-            --blue-500: #3B82F6;
-            --gold-500: #F59E0B;
-            --green-500: #10B981;
-            --neutral-800: #1F2937;
-            --neutral-500: #6B7280;
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --radius: 20px;
-            
-            /* Font variables */
-            --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
-            --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        body {
-            font-family: var(--font-body);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        * {
             margin: 0;
-            padding: 20px;
-            text-align: center;
-            background: #f8f9fa;
-            background-image: radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%);
-            font-size: 1rem;
-            font-weight: 400;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple-500: #8b5cf6;
+            --purple-600: #7c3aed;
+            --purple-700: #6d28d9;
+            --blue-500: #06b6d4;
+            --amber-500: #f59e0b;
+            --emerald-500: #10b981;
+            --neutral-50: #f9fafb;
+            --neutral-100: #f3f4f6;
+            --neutral-200: #e5e7eb;
+            --neutral-500: #6b7280;
+            --neutral-700: #374151;
+            --neutral-800: #1f2937;
+            --neutral-900: #111827;
+        }
+
+        body {
+            font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
+            background: #ffffff;
+            color: var(--neutral-800);
+            transition: all 0.3s ease;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 700;
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--purple-500);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        
-        .logo-container {
-            margin-bottom: 30px;
-            position: relative;
+
+        .theme-toggle:hover {
+            background: var(--purple-600);
+            transform: translateY(-2px);
         }
-        
-        .logo-icon {
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .app-icon {
             width: 120px;
             height: 120px;
-            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
-            border-radius: var(--radius);
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%);
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow-lg);
-            margin: 0 auto 20px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
         }
-        
-        .logo-icon:hover {
-            transform: rotate(5deg) scale(1.05);
+
+        .app-icon svg {
+            width: 70px;
+            height: 70px;
+            display: block;
         }
-        
-        .logo-icon img {
-            width: 60%;
-            height: 60%;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-        }
-        
-        h1 {
-            font-size: 3.2rem;
-            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+
+        .header-content h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--purple-500) 0%, var(--blue-500) 50%, var(--amber-500) 100%);
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: -0.02em;
         }
-        
+
         .subtitle {
             font-size: 1.3rem;
             color: var(--neutral-500);
+            font-family: 'Figtree', sans-serif;
             max-width: 700px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-            line-height: 1.6;
+            margin: 0 auto;
+            line-height: 1.7;
         }
-        
+
         .nav-cards {
             display: flex;
-            gap: 40px;
+            gap: 2rem;
             flex-wrap: wrap;
             justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 40px;
-            width: 300px;
-            box-shadow: var(--shadow-lg);
+            background: var(--neutral-50);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 320px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--neutral-200);
             position: relative;
             overflow: hidden;
         }
-        
+
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card::before {
             content: "";
             position: absolute;
@@ -128,83 +149,87 @@
             height: 100%;
             background: linear-gradient(to bottom, var(--purple-500), var(--blue-500));
         }
-        
+
         .card h2 {
-            color: var(--purple-800);
-            margin-bottom: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--purple-700);
+            margin-bottom: 1.5rem;
             font-size: 1.8rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 0.75rem;
         }
-        
+
         .card p {
-            color: var(--neutral-500);
+            color: var(--neutral-700);
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
             background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(126, 34, 205, 0.2);
-            font-family: var(--font-heading);
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(126, 34, 205, 0.3);
         }
-        
+
         .btn i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
-        
+
         .colors-btn {
             background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
         }
-        
+
         .typography-btn {
-            background: linear-gradient(135deg, var(--gold-500), var(--green-500));
+            background: linear-gradient(135deg, var(--amber-500), var(--emerald-500));
         }
-        
+
         footer {
-            margin-top: 80px;
+            margin-top: 5rem;
             color: var(--neutral-500);
-            padding: 20px;
+            padding: 2rem;
+            text-align: center;
             max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: white;
-            border: none;
-            border-radius: 30px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: var(--purple-700);
-            font-weight: 600;
-            z-index: 100;
-            font-family: var(--font-heading);
+
+        /* Dark theme */
+        body.dark-theme {
+            background: #0f0f23;
+            color: #e2e8f0;
         }
-        
+
+        body.dark-theme .card {
+            background: #1e1b4b;
+            border-color: #312e81;
+        }
+
+        body.dark-theme .card p {
+            color: #cbd5e1;
+        }
+
+        body.dark-theme .subtitle {
+            color: #94a3b8;
+        }
+
         @media (max-width: 768px) {
-            h1 {
+            .header-content h1 {
                 font-size: 2.5rem;
             }
             
@@ -213,7 +238,7 @@
             }
             
             .nav-cards {
-                gap: 25px;
+                gap: 1.5rem;
             }
             
             .card {
@@ -223,45 +248,77 @@
         }
         
         @media (max-width: 480px) {
-            h1 {
+            .header-content h1 {
                 font-size: 2rem;
             }
             
-            .logo-icon {
+            .app-icon {
                 width: 100px;
                 height: 100px;
+            }
+            
+            .app-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .card h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <button class="dark-mode-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i> Dark Mode
-    </button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
     
-    <div class="logo-container">
-        <div class="logo-icon">
-            <img src="https://cdn.shopify.com/s/files/1/0707/6839/4562/files/SonicSpotlights_S_Mark_87563148-3085-4229-938f-c7c4066f36b6.png?v=1754425838" alt="Sonic Spotlights Logo">
-        </div>
-        <h1>Sonic Spotlights Design System</h1>
-        <p class="subtitle">Complete design resources for consistent brand implementation across all products and platforms</p>
-    </div>
-    
-    <div class="nav-cards">
-        <div class="card">
-            <h2><i class="fas fa-palette"></i> Color System</h2>
-            <p>Our complete color palette with usage guidelines, accessibility specs, and implementation examples for both light and dark modes.</p>
-            <a href="docs/colors.html" class="btn colors-btn">
-                <i class="fas fa-arrow-right"></i> View Colors
-            </a>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">
+                <svg viewBox="0 0 1325 1324" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <g>
+                        <path d="M457.309,1255.86c-7.205,17.679 -27.38,26.171 -45.055,18.963c-17.679,-7.205 -26.17,-27.375 -18.966,-45.055c7.208,-17.679 27.379,-26.166 45.058,-18.962c17.675,7.204 26.167,27.375 18.963,45.054m473.566,-26.092c7.204,17.68 -1.287,37.85 -18.966,45.055c-17.68,7.208 -37.85,-1.284 -45.055,-18.963c-7.204,-17.679 1.284,-37.85 18.963,-45.054c17.679,-7.204 37.85,1.283 45.058,18.962m199.271,-148.75c13.496,13.5 13.496,35.384 0,48.884c-13.5,13.5 -35.387,13.5 -48.883,-0c-13.5,-13.5 -13.5,-35.384 -0,-48.884c13.496,-13.5 35.383,-13.5 48.883,0m145.192,-170.012c-7.188,17.683 -27.35,26.196 -45.038,19.012c-17.683,-7.187 -26.196,-27.35 -19.012,-45.037c7.187,-17.683 27.35,-26.196 45.037,-19.013c17.684,7.188 26.196,27.35 19.013,45.038m-1032.44,170.012c13.5,13.5 13.5,35.384 0,48.884c-13.496,13.5 -35.383,13.5 -48.883,-0c-13.496,-13.5 -13.496,-35.384 -0,-48.884c13.5,-13.5 35.387,-13.5 48.883,0m838.363,-838.358c-13.5,-13.5 -13.5,-35.387 -0,-48.883c13.496,-13.5 35.383,-13.5 48.883,-0c13.496,13.496 13.496,35.383 0,48.883c-13.5,13.496 -35.387,13.496 -48.883,0m-214.409,-174.846c7.205,-17.675 27.375,-26.166 45.055,-18.962c17.679,7.204 26.17,27.379 18.966,45.054c-7.208,17.679 -27.379,26.171 -45.058,18.967c-17.679,-7.209 -26.167,-27.38 -18.963,-45.059m-473.566,26.092c-7.204,-17.675 1.287,-37.85 18.966,-45.054c17.675,-7.204 37.85,1.287 45.055,18.962c7.204,17.679 -1.288,37.85 -18.963,45.059c-17.679,7.204 -37.85,-1.288 -45.058,-18.967m-280.413,791.075c7.184,17.687 -1.329,37.85 -19.012,45.037c-17.688,7.184 -37.85,-1.329 -45.038,-19.012c-7.183,-17.688 1.329,-37.85 19.013,-45.038c17.687,-7.183 37.85,1.33 45.037,19.013m-45.037,-427.275c-17.684,-7.188 -26.196,-27.35 -19.013,-45.033c7.188,-17.688 27.35,-26.2 45.038,-19.013c17.683,7.183 26.196,27.346 19.012,45.033c-7.187,17.688 -27.35,26.2 -45.037,19.013m126.179,-215.046c-13.496,-13.5 -13.496,-35.387 -0,-48.883c13.5,-13.5 35.387,-13.5 48.883,-0c13.5,13.496 13.5,35.383 0,48.883c-13.496,13.496 -35.383,13.496 -48.883,0m1017.27,196.033c-7.184,-17.687 1.329,-37.85 19.012,-45.033c17.688,-7.187 37.85,1.325 45.038,19.013c7.183,17.683 -1.329,37.845 -19.013,45.033c-17.687,7.187 -37.85,-1.325 -45.037,-19.013m-529.234,878.7c8.821,-6.262 14.592,-16.537 14.592,-28.179c0,-19.091 -15.475,-34.566 -34.567,-34.566c-19.087,-0 -34.562,15.475 -34.562,34.566c-0,11.642 5.771,21.917 14.592,28.179" style="fill:#fff;fill-rule:nonzero;"/>
+                        <path d="M630.161,47.619c-7.204,-17.675 1.288,-37.85 18.967,-45.054c17.675,-7.204 37.85,1.287 45.054,18.962c7.204,17.68 -1.288,37.85 -18.963,45.059c-17.679,7.204 -37.85,-1.288 -45.058,-18.967" style="fill:#fff;fill-rule:nonzero;"/>
+                        <path d="M1257.47,674.757c-7.205,-17.675 1.287,-37.85 18.966,-45.054c17.675,-7.205 37.85,1.287 45.054,18.962c7.205,17.679 -1.287,37.85 -18.962,45.058c-17.679,7.205 -37.85,-1.287 -45.058,-18.966" style="fill:#fff;fill-rule:nonzero;"/>
+                        <path d="M630.121,1301.79c-7.204,-17.675 1.287,-37.85 18.966,-45.054c17.675,-7.204 37.85,1.287 45.055,18.962c7.204,17.68 -1.288,37.85 -18.963,45.059c-17.679,7.204 -37.85,-1.288 -45.058,-18.967" style="fill:#fff;fill-rule:nonzero;"/>
+                        <path d="M2.565,674.667c-7.204,-17.675 1.287,-37.85 18.967,-45.054c17.675,-7.204 37.85,1.287 45.054,18.962c7.204,17.679 -1.288,37.85 -18.963,45.059c-17.679,7.204 -37.85,-1.288 -45.058,-18.967" style="fill:#fff;fill-rule:nonzero;"/>
+                        <path d="M512.642,1153.41c-9.825,24.109 -37.338,35.692 -61.45,25.863c-24.108,-9.825 -35.688,-37.338 -25.863,-61.446c9.83,-24.113 37.338,-35.692 61.45,-25.867c24.109,9.829 35.688,37.342 25.863,61.45m196.583,20.046c0,26.038 -21.108,47.142 -47.146,47.142c-26.033,-0 -47.141,-21.104 -47.141,-47.142c-0,-26.037 21.108,-47.142 47.141,-47.142c26.038,0 47.146,21.105 47.146,47.142m163.742,5.817c-24.108,9.829 -51.621,-1.754 -61.446,-25.863c-9.825,-24.108 1.754,-51.621 25.863,-61.45c24.112,-9.825 51.62,1.754 61.45,25.867c9.825,24.108 -1.755,51.621 -25.867,61.446m347.879,-517.438c0,26.034 -21.108,47.142 -47.142,47.142c-26.037,-0 -47.145,-21.108 -47.141,-47.142c-0,-26.037 21.104,-47.141 47.141,-47.141c26.034,-0 47.142,21.104 47.142,47.141m-41.1,210.329c-9.8,24.121 -37.296,35.73 -61.417,25.93c-24.12,-9.8 -35.733,-37.3 -25.933,-61.421c9.804,-24.121 37.3,-35.729 61.421,-25.929c24.121,9.8 35.733,37.3 25.929,61.42m-377.683,-268.658c-32.084,0 -58.088,-26.004 -58.088,-58.087c0,-32.084 26.004,-58.088 58.088,-58.088c32.083,0 58.087,26.004 58.087,58.088c0,32.083 -26.004,58.087 -58.087,58.087m11.258,147.425c-5.362,36.5 -27.254,73.508 -79.967,73.508l-20.1,0c8.63,-9.408 16.938,-19.387 23.550,-30.879c14.805,-25.729 14.259,-55.925 -1.504,-82.846c-18.283,-31.241 -47.1,-49.525 -74.971,-67.204c-16.4,-10.404 -31.887,-20.229 -45.441,-32.529c-14.429,-13.087 -29.429,-35.142 -18.984,-65.871c6.292,-18.508 18.834,-36.196 35.284,-50.191l112.066,-0l-0.516,11.154c-32.167,-2.029 -67.904,11.15 -68.796,53.229c-1.342,48.162 54.946,72.492 85.325,91.758c41.096,25.854 60.308,57.284 54.054,99.871m-125.246,69.983c-1.1,1.155 -2.216,2.355 -3.329,3.525l-100.621,0l0.309,-12.675c34.4,-1.012 61.65,-9.629 62.987,-54.75c-4.912,-101.9 -150.992,-80.604 -146.525,-186.054c2.65,-67.679 53.788,-75.858 100.717,-76.033c-11.375,13.083 -20.05,27.858 -25.367,43.5c-10.979,32.296 -2.212,63.525 24.688,87.929c14.879,13.504 31.854,24.271 48.270,34.688c26.967,17.104 52.438,33.266 68.180,60.162c11.891,20.313 12.408,42.908 1.425,62c-7.942,13.804 -19.013,25.417 -30.734,37.708m-166.15,11.117c-32.079,0 -58.087,-26.008 -58.087,-58.092c-0,-32.079 26.008,-58.087 58.087,-58.087c32.084,-0 58.092,26.008 58.092,58.087c-0,32.084 -26.008,58.092 -58.092,58.092m529.388,-76.512c-19.863,-8.067 -41.496,-4.625 -57.642,7.129c-0.917,-14.1 -5.95,-27.6 -14.396,-38.838c12.054,-7.225 21.8,-17.841 27.954,-30.558c10.534,16.967 29.280,28.3 50.721,28.3c32.979,-0 59.717,-26.738 59.717,-59.717c-0,-32.983 -26.738,-59.721 -59.717,-59.721c-21.441,0 -40.187,11.338 -50.721,28.305c-6.154,-12.721 -15.9,-23.334 -27.954,-30.563c8.446,-11.233 13.479,-24.737 14.396,-38.837c16.146,11.754 37.779,15.2 57.642,7.129c30.554,-12.413 45.262,-47.25 32.846,-77.804c-12.413,-30.555 -47.25,-45.263 -77.805,-32.846c-19.862,8.066 -32.962,25.625 -36.333,45.308c-11.3,-10.192 -25.529,-16.633 -40.612,-18.287c4.341,-14.542 3.941,-30.155 -1.055,-44.53c19.446,4.55 40.717,-0.687 55.875,-15.850c23.321,-23.320 23.321,-61.133 0,-84.454c-23.320,-23.321 -61.133,-23.321 -84.454,0c-15.162,15.163 -20.4,36.429 -15.850,55.875c-14.287,-4.966 -29.8,-5.396 -44.266,-1.137c-1.684,-14.984 -8.1,-29.113 -18.221,-40.354c19.687,-3.35 37.262,-16.434 45.354,-36.288c12.446,-30.542 -2.221,-65.392 -32.763,-77.842c-30.545,-12.445 -65.395,2.221 -77.841,32.767c-8.092,19.854 -4.671,41.492 7.066,57.646c-14.187,0.908 -27.779,5.983 -39.062,14.508c-7.229,-12.154 -17.896,-21.983 -30.696,-28.175c16.967,-10.533 28.304,-29.279 28.304,-50.721c0,-32.979 -26.737,-59.716 -59.721,-59.716c-32.979,-0 -59.716,26.737 -59.716,59.716c-0,21.442 11.337,40.188 28.304,50.721c-12.8,6.192 -23.467,16.021 -30.7,28.175c-11.283,-8.525 -24.871,-13.6 -39.058,-14.508c11.737,-16.154 15.158,-37.792 7.066,-57.646c-12.446,-30.542 -47.3,-45.212 -77.841,-32.767c-30.542,12.45 -45.209,47.3 -32.763,77.842c8.092,19.854 25.663,32.938 45.35,36.288c-10.121,11.241 -16.533,25.37 -18.217,40.354c-14.466,-4.259 -29.979,-3.829 -44.266,1.137c4.55,-19.446 -0.692,-40.712 -15.850,-55.875c-23.321,-23.321 -61.134,-23.321 -84.454,0c-23.321,23.321 -23.321,61.134 -0,84.454c15.158,15.163 36.429,20.4 55.875,15.850c-4.996,14.375 -5.400,29.988 -1.055,44.530c-15.083,1.654 -29.312,8.095 -40.612,18.287c-3.371,-19.683 -16.471,-37.242 -36.333,-45.308c-30.555,-12.417 -65.392,2.291 -77.805,32.846c-12.416,30.554 2.292,65.391 32.846,77.804c19.863,8.071 41.496,4.625 57.642,-7.129c0.917,14.100 5.95,27.604 14.396,38.837c-12.054,7.229 -21.8,17.842 -27.954,30.563c-10.534,-16.967 -29.28,-28.305 -50.721,-28.305c-32.979,0 -59.717,26.738 -59.717,59.721c0,32.979 26.738,59.717 59.717,59.717c21.441,-0 40.187,-11.333 50.721,-28.3c6.154,12.717 15.9,23.333 27.954,30.558c-8.446,11.238 -13.479,24.738 -14.396,38.838c-16.146,-11.754 -37.779,-15.196 -57.642,-7.129c-30.554,12.416 -45.262,47.25 -32.846,77.808c12.413,30.554 47.25,45.262 77.805,32.846c19.862,-8.071 32.962,-25.629 36.333,-45.313c11.3,10.196 25.529,16.638 40.612,18.292c-4.345,14.537 -3.941,30.15 1.055,44.525c-19.446,-4.55 -40.717,0.692 -55.875,15.850c-23.321,23.321 -23.321,61.133 -0,84.454c23.320,23.325 61.133,23.325 84.454,0c15.158,-15.158 20.4,-36.429 15.850,-55.875c14.287,4.967 29.8,5.4 44.266,1.138c1.684,14.987 8.096,29.116 18.217,40.358c-19.687,3.35 -37.258,16.429 -45.35,36.283c-12.446,30.542 2.221,65.396 32.763,77.842c30.541,12.446 65.395,-2.221 77.841,-32.763c8.092,-19.854 4.671,-41.491 -7.066,-57.65c14.187,-0.904 27.775,-5.979 39.058,-14.508c7.233,12.158 17.9,21.983 30.7,28.179c-16.971,10.534 -28.304,29.279 -28.304,50.717c-0,32.983 26.737,59.717 59.716,59.717c32.984,-0 59.721,-26.734 59.721,-59.717c0,-21.438 -11.337,-40.183 -28.304,-50.717c12.8,-6.196 23.467,-16.021 30.696,-28.179c11.283,8.529 24.875,13.6 39.062,14.508c-11.737,16.159 -15.158,37.796 -7.066,57.65c12.446,30.542 47.296,45.209 77.841,32.763c30.542,-12.446 45.209,-47.3 32.763,-77.842c-8.092,-19.854 -25.667,-32.933 -45.354,-36.283c10.121,-11.242 16.537,-25.371 18.221,-40.358c14.466,4.262 29.979,3.829 44.266,-1.138c-4.55,19.446 0.688,40.717 15.850,55.875c23.321,23.325 61.134,23.325 84.454,0c23.321,-23.321 23.321,-61.133 0,-84.454c-15.158,-15.158 -36.429,-20.4 -55.875,-15.850c4.996,-14.375 5.4,-29.988 1.055,-44.525c15.083,-1.654 29.312,-8.096 40.612,-18.292c3.371,19.684 16.471,37.242 36.333,45.313c30.555,12.416 65.392,-2.292 77.805,-32.846c12.416,-30.558 -2.292,-65.392 -32.846,-77.808m5.875,234.754c18.408,18.408 18.408,48.258 -0,66.666c-18.413,18.413 -48.259,18.413 -66.671,0c-18.408,-18.408 -18.408,-48.258 -0,-66.67c18.412,-18.409 48.258,-18.409 66.671,0.004m-723.542,-0c18.408,18.408 18.408,48.258 0,66.666c-18.412,18.413 -48.258,18.413 -66.671,0c-18.408,-18.408 -18.408,-48.258 0,-66.666c18.413,-18.413 48.259,-18.413 66.671,-0m656.871,-656.875c-18.408,-18.409 -18.408,-48.259 -0,-66.671c18.412,-18.408 48.258,-18.408 66.671,-0c18.408,18.412 18.408,48.262 -0,66.671c-18.413,18.408 -48.259,18.408 -66.671,-0m-539.325,-189.004c24.112,-9.825 51.625,1.754 61.45,25.866c9.825,24.109 -1.754,51.621 -25.863,61.446c-24.112,9.825 -51.62,-1.754 -61.45,-25.862c-9.825,-24.113 1.755,-51.621 25.863,-61.45m-306.779,727.77c-9.8,-24.12 1.812,-51.62 25.933,-61.42c24.121,-9.8 51.617,1.808 61.417,25.929c9.804,24.121 -1.809,51.621 -25.929,61.421c-24.121,9.8 -51.617,-1.809 -61.421,-25.93m470.525,-721.95c-0,-26.037 21.108,-47.145 47.141,-47.145c26.038,-0 47.146,21.108 47.146,47.145c0,26.034 -21.108,47.142 -47.146,47.142c-26.033,0 -47.141,-21.108 -47.141,-47.142m196.583,20.046c9.825,-24.112 37.338,-35.691 61.446,-25.866c24.112,9.829 35.692,37.337 25.867,61.45c-9.83,24.108 -37.338,35.687 -61.45,25.862c-24.109,-9.825 -35.688,-37.337 -25.863,-61.446m368.225,281.246c9.804,24.121 -1.808,51.621 -25.929,61.421c-24.121,9.8 -51.617,-1.808 -61.421,-25.933c-9.8,-24.121 1.813,-51.617 25.933,-61.417c24.121,-9.8 51.617,1.808 61.417,25.929m-1029.29,257.471c-26.034,-0 -47.142,-21.108 -47.142,-47.142c-0,-26.037 21.108,-47.141 47.142,-47.141c26.037,-0 47.141,21.104 47.141,47.141c0,26.034 -21.104,47.142 -47.141,47.142m-6.046,-257.471c9.804,-24.121 37.3,-35.729 61.421,-25.929c24.12,9.8 35.733,37.296 25.929,61.417c-9.8,24.125 -37.296,35.733 -61.417,25.933c-24.121,-9.8 -35.733,-37.3 -25.933,-61.421m122.562,-118.108c-18.408,-18.409 -18.408,-48.259 0,-66.671c18.413,-18.408 48.259,-18.408 66.671,-0c18.408,18.412 18.408,48.262 0,66.671c-18.412,18.408 -48.258,18.408 -66.671,-0" style="fill:#fff;fill-rule:nonzero;"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="header-content">
+                <h1>Sonic Spotlights Design System</h1>
+                <p class="subtitle">Complete design resources for consistent brand implementation across all products and platforms</p>
+            </div>
         </div>
         
-        <div class="card">
-            <h2><i class="fas fa-font"></i> Typography</h2>
-            <p>Font system, type scale, and text styles for all interfaces and marketing materials with accessibility considerations.</p>
-            <a href="docs/typography.html" class="btn typography-btn">
-                <i class="fas fa-arrow-right"></i> View Typography
-            </a>
+        <div class="nav-cards">
+            <div class="card">
+                <h2><i class="fas fa-palette"></i> Color System</h2>
+                <p>Our complete color palette with usage guidelines, accessibility specs, and implementation examples for both light and dark modes.</p>
+                <a href="docs/colors.html" class="btn colors-btn">
+                    <i class="fas fa-arrow-right"></i> View Colors
+                </a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-font"></i> Typography</h2>
+                <p>Font system, type scale, and text styles for all interfaces and marketing materials with accessibility considerations.</p>
+                <a href="docs/typography.html" class="btn typography-btn">
+                    <i class="fas fa-arrow-right"></i> View Typography
+                </a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-border-all"></i> Spacing</h2>
+                <p>Our 8-point grid system for consistent spacing, margins, and padding across all components and layouts.</p>
+                <a href="docs/spacing.html" class="btn colors-btn">
+                    <i class="fas fa-arrow-right"></i> View Spacing
+                </a>
+            </div>
         </div>
     </div>
     
@@ -271,28 +328,18 @@
     </footer>
     
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            
-            themeToggle.innerHTML = isDarkMode 
-                ? '<i class="fas fa-sun"></i> Light Mode' 
-                : '<i class="fas fa-moon"></i> Dark Mode';
-            
-            if (isDarkMode) {
-                body.style.backgroundColor = '#0F172A';
-                body.style.backgroundImage = 'radial-gradient(circle at 90% 80%, rgba(126, 34, 205, 0.05) 0%, rgba(126, 34, 205, 0) 30%)';
-                body.style.color = '#F1F5F9';
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const button = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('dark-theme')) {
+                button.textContent = '☀️ Light Theme';
             } else {
-                body.style.backgroundColor = '#f8f9fa';
-                body.style.backgroundImage = 'radial-gradient(circle at 10% 20%, rgba(126, 34, 205, 0.03) 0%, rgba(126, 34, 205, 0) 20%)';
-                body.style.color = '#1F2937';
+                button.textContent = '🌓 Dark Theme';
             }
-        });
+        }
+
+        // Add smooth scroll
+        document.documentElement.style.scrollBehavior = 'smooth';
     </script>
 </body>
 </html>
