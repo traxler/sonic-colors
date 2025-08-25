@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Spotlights - Spacing System</title>
+    <title>Sonic Spotlights Design System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -28,18 +29,6 @@
             --neutral-700: #374151;
             --neutral-800: #1f2937;
             --neutral-900: #111827;
-            
-            /* Spacing Variables */
-            --spacing-3xs: 2px;
-            --spacing-2xs: 4px;
-            --spacing-xs: 8px;
-            --spacing-sm: 12px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 40px;
-            --spacing-3xl: 48px;
-            --spacing-4xl: 64px;
         }
 
         body {
@@ -64,6 +53,7 @@
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
             transition: all 0.3s ease;
             z-index: 1000;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .theme-toggle:hover {
@@ -82,13 +72,16 @@
             align-items: center;
             gap: 1.5rem;
             margin-bottom: 3rem;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%);
-            border-radius: 20px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,14 +89,14 @@
         }
 
         .app-icon svg {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             display: block;
         }
 
         .header-content h1 {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--purple-500) 0%, var(--blue-500) 50%, var(--amber-500) 100%);
@@ -113,206 +106,107 @@
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--neutral-500);
             font-family: 'Figtree', sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section h2 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--neutral-800);
-        }
-
-        /* Spacing Scale Styles */
-        .spacing-grid {
-            display: grid;
+        .nav-cards {
+            display: flex;
             gap: 2rem;
-            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .spacing-specimen {
-            padding: 2rem;
+        .card {
             background: var(--neutral-50);
             border-radius: 16px;
-            border: 1px solid var(--neutral-200);
+            padding: 2.5rem;
+            width: 320px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            border: 1px solid var(--neutral-200);
+            position: relative;
+            overflow: hidden;
         }
 
-        .spacing-specimen:hover {
-            transform: translateY(-2px);
+        .card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .spacing-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--purple-500), var(--blue-500));
+        }
+
+        .card h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--purple-700);
             margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--neutral-200);
-        }
-
-        .spacing-label {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 600;
-            color: var(--purple-600);
-            font-size: 0.9rem;
-        }
-
-        .spacing-details {
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.8rem;
-            color: var(--neutral-500);
-        }
-
-        .spacing-usage {
-            font-size: 0.85rem;
-            color: var(--neutral-500);
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        .spacing-visual-container {
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 0.75rem;
         }
 
-        .spacing-visual {
-            height: 40px;
-            background: var(--purple-500);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .spacing-visual::after {
-            content: attr(data-size);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .spacing-text {
-            font-family: 'Figtree', sans-serif;
-            font-size: 1rem;
+        .card p {
             color: var(--neutral-700);
-            flex: 1;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
         }
 
-        .spacing-name {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .spacing-value {
-            font-family: 'Monaco', 'Menlo', monospace;
-            color: var(--blue-500);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Code Blocks */
-        .code-block {
-            background: var(--neutral-100);
-            border: 1px solid var(--neutral-200);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            overflow-x: auto;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.9rem;
-        }
-
-        .variable {
-            color: var(--purple-600);
-        }
-
-        .value {
-            color: var(--emerald-500);
-        }
-
-        /* Usage Examples */
-        .usage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .usage-example {
-            background: var(--neutral-50);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid var(--neutral-200);
-        }
-
-        .usage-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 600;
-            color: var(--neutral-800);
-            margin-bottom: 1rem;
-        }
-
-        .demo-component {
-            background: white;
-            border: 1px solid var(--neutral-200);
-            border-radius: 8px;
-            margin-top: 1rem;
-            padding: 1rem;
-        }
-
-        .demo-button {
-            background: var(--purple-500);
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
             color: white;
-            border: none;
-            border-radius: 6px;
-            font-family: 'Figtree', sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .demo-button:hover {
-            background: var(--purple-600);
-        }
-
-        /* Rationale Section */
-        .rationale-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(139, 92, 246, 0.1);
-            margin-bottom: 3rem;
-        }
-
-        .rationale-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .rationale-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--neutral-200);
-        }
-
-        .rationale-card h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: 600;
-            color: var(--purple-600);
-            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(126, 34, 205, 0.2);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(126, 34, 205, 0.3);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        .colors-btn {
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+        }
+
+        .typography-btn {
+            background: linear-gradient(135deg, var(--amber-500), var(--emerald-500));
+        }
+
+        footer {
+            margin-top: 5rem;
+            color: var(--neutral-500);
+            padding: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Dark theme */
@@ -321,71 +215,59 @@
             color: #e2e8f0;
         }
 
-        body.dark-theme .spacing-specimen {
+        body.dark-theme .card {
             background: #1e1b4b;
             border-color: #312e81;
         }
 
-        body.dark-theme .section h2 {
-            color: #f1f5f9;
-        }
-
-        body.dark-theme .spacing-text {
+        body.dark-theme .card p {
             color: #cbd5e1;
         }
 
-        body.dark-theme .code-block {
-            background: #1e1b4b;
-            border-color: #312e81;
-        }
-
-        body.dark-theme .usage-example {
-            background: #1e1b4b;
-            border-color: #312e81;
-        }
-
-        body.dark-theme .demo-component {
-            background: #1e1b4b;
-            border-color: #312e81;
-        }
-
-        body.dark-theme .rationale-section {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            border-color: #4c1d95;
-        }
-
-        body.dark-theme .rationale-card {
-            background: #1e1b4b;
-            border-color: #312e81;
+        body.dark-theme .subtitle {
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+            .header-content h1 {
+                font-size: 2.5rem;
             }
-
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-cards {
+                gap: 1.5rem;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .header-content h1 {
                 font-size: 2rem;
             }
-
-            .spacing-visual-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+            
+            .app-icon {
+                width: 100px;
+                height: 100px;
             }
-
-            .spacing-visual {
-                width: 100%;
+            
+            .app-icon svg {
+                width: 60px;
+                height: 60px;
             }
-
-            .usage-grid {
-                grid-template-columns: 1fr;
+            
+            .card {
+                padding: 1.5rem;
             }
-
-            .rationale-grid {
-                grid-template-columns: 1fr;
+            
+            .card h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -408,264 +290,43 @@
                 </svg>
             </div>
             <div class="header-content">
-                <h1>Spacing System</h1>
-                <p class="subtitle">8-Point Grid • Optimized for Music Production Interfaces</p>
+                <h1>Sonic Spotlights Design System</h1>
+                <p class="subtitle">Complete design resources for consistent brand implementation across all products and platforms</p>
             </div>
         </div>
-
-        <section class="section">
-            <h2>Spacing Scale & Hierarchy</h2>
-            
-            <div class="spacing-grid">
-                <!-- Spacing Items -->
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">3X Small</span>
-                        <span class="spacing-details">2px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="2px" style="width: 2px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">3X Small</div>
-                            <div class="spacing-value">spacing-3xs: 2px</div>
-                            <div class="spacing-usage">Minimal spacing • Border widths • Focus indicators</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">2X Small</span>
-                        <span class="spacing-details">4px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="4px" style="width: 4px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">2X Small</div>
-                            <div class="spacing-value">spacing-2xs: 4px</div>
-                            <div class="spacing-usage">Micro spacing • Icon padding • Tight gaps</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">Extra Small</span>
-                        <span class="spacing-details">8px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="8px" style="width: 8px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">Extra Small</div>
-                            <div class="spacing-value">spacing-xs: 8px</div>
-                            <div class="spacing-usage">Tight spacing • Form field gaps • List item padding</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">Small</span>
-                        <span class="spacing-details">12px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="12px" style="width: 12px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">Small</div>
-                            <div class="spacing-value">spacing-sm: 12px</div>
-                            <div class="spacing-usage">Compact spacing • Button padding • Icon-text gaps</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">Medium</span>
-                        <span class="spacing-details">16px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="16px" style="width: 16px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">Medium</div>
-                            <div class="spacing-value">spacing-md: 16px</div>
-                            <div class="spacing-usage">Standard spacing • Component padding • Text spacing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">Large</span>
-                        <span class="spacing-details">24px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="24px" style="width: 24px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">Large</div>
-                            <div class="spacing-value">spacing-lg: 24px</div>
-                            <div class="spacing-usage">Section gaps • Card padding • Button spacing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">Extra Large</span>
-                        <span class="spacing-details">32px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="32px" style="width: 32px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">Extra Large</div>
-                            <div class="spacing-value">spacing-xl: 32px</div>
-                            <div class="spacing-usage">Component margins • Layout padding • Modal spacing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">2X Large</span>
-                        <span class="spacing-details">40px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="40px" style="width: 40px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">2X Large</div>
-                            <div class="spacing-value">spacing-2xl: 40px</div>
-                            <div class="spacing-usage">Section separation • Header margins • Content blocks</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">3X Large</span>
-                        <span class="spacing-details">48px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="48px" style="width: 48px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">3X Large</div>
-                            <div class="spacing-value">spacing-3xl: 48px</div>
-                            <div class="spacing-usage">Major sections • Page headers • Feature blocks</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spacing-specimen">
-                    <div class="spacing-info">
-                        <span class="spacing-label">4X Large</span>
-                        <span class="spacing-details">64px</span>
-                    </div>
-                    <div class="spacing-visual-container">
-                        <div class="spacing-visual" data-size="64px" style="width: 64px;"></div>
-                        <div class="spacing-text">
-                            <div class="spacing-name">4X Large</div>
-                            <div class="spacing-value">spacing-4xl: 64px</div>
-                            <div class="spacing-usage">Hero sections • Page margins • Major layout gaps</div>
-                        </div>
-                    </div>
-                </div>
+        
+        <div class="nav-cards">
+            <div class="card">
+                <h2><i class="fas fa-palette"></i> Color System</h2>
+                <p>Our complete color palette with usage guidelines, accessibility specs, and implementation examples for both light and dark modes.</p>
+                <a href="docs/colors.html" class="btn colors-btn">
+                    <i class="fas fa-arrow-right"></i> View Colors
+                </a>
             </div>
-        </section>
-
-        <section class="rationale-section">
-            <h2>Implementation</h2>
-            <p>Add these spacing variables to your design tokens for consistent spacing across all components and layouts.</p>
             
-            <div class="code-block">
-:root {<br>
-&nbsp;&nbsp;<span class="variable">--spacing-3xs</span>: <span class="value">2px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-2xs</span>: <span class="value">4px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-xs</span>: <span class="value">8px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-sm</span>: <span class="value">12px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-md</span>: <span class="value">16px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-lg</span>: <span class="value">24px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-xl</span>: <span class="value">32px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-2xl</span>: <span class="value">40px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-3xl</span>: <span class="value">48px</span>;<br>
-&nbsp;&nbsp;<span class="variable">--spacing-4xl</span>: <span class="value">64px</span>;<br>
-}
+            <div class="card">
+                <h2><i class="fas fa-font"></i> Typography</h2>
+                <p>Font system, type scale, and text styles for all interfaces and marketing materials with accessibility considerations.</p>
+                <a href="docs/typography.html" class="btn typography-btn">
+                    <i class="fas fa-arrow-right"></i> View Typography
+                </a>
             </div>
-        </section>
-
-        <section class="section">
-            <h2>Usage Examples</h2>
-            <p>See how spacing tokens work together to create hierarchy and improve user experience in common interface patterns.</p>
             
-            <div class="usage-grid">
-                <div class="usage-example">
-                    <div class="usage-title">Button Spacing</div>
-                    <p>Consistent padding creates comfortable touch targets and visual balance.</p>
-                    <div style="margin-top: var(--spacing-md);">
-                        <button class="demo-button" style="padding: var(--spacing-xs) var(--spacing-sm); margin-right: var(--spacing-xs);">Small</button>
-                        <button class="demo-button" style="padding: var(--spacing-sm) var(--spacing-md); margin-right: var(--spacing-xs);">Medium</button>
-                        <button class="demo-button" style="padding: var(--spacing-md) var(--spacing-lg);">Large</button>
-                    </div>
-                </div>
-
-                <div class="usage-example">
-                    <div class="usage-title">Card Layout</div>
-                    <p>Proper spacing creates breathing room and clear content hierarchy.</p>
-                    <div class="demo-component" style="padding: var(--spacing-lg);">
-                        <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--neutral-800); font-size: 1.1rem;">Project Title</h4>
-                        <p style="margin: 0 0 var(--spacing-md) 0; color: var(--neutral-700); font-size: 0.9rem;">Project description with proper text spacing for readability and visual hierarchy.</p>
-                        <div style="margin-top: var(--spacing-md); display: flex; gap: var(--spacing-xs);">
-                            <span style="background: var(--purple-500); color: white; padding: var(--spacing-2xs) var(--spacing-xs); border-radius: 4px; font-size: 0.75rem;">Design</span>
-                            <span style="background: var(--neutral-200); color: var(--neutral-700); padding: var(--spacing-2xs) var(--spacing-xs); border-radius: 4px; font-size: 0.75rem;">In Progress</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="usage-example">
-                    <div class="usage-title">Form Fields</div>
-                    <p>Spacing creates clear relationships between labels, inputs, and help text.</p>
-                    <div style="margin-top: var(--spacing-md);">
-                        <div style="margin-bottom: var(--spacing-lg);">
-                            <label style="display: block; margin-bottom: var(--spacing-xs); color: var(--neutral-800); font-weight: 500; font-size: 0.9rem;">Project Name</label>
-                            <input type="text" style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); background: var(--neutral-100); border: 1px solid var(--neutral-300); border-radius: 6px; color: var(--neutral-800);" placeholder="Enter project name">
-                            <div style="margin-top: var(--spacing-xs); color: var(--neutral-500); font-size: 0.8rem;">Choose a descriptive name for your project</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="usage-example">
-                    <div class="usage-title">Navigation Menu</div>
-                    <p>Consistent spacing improves scannability and interaction.</p>
-                    <div class="demo-component" style="padding: var(--spacing-sm);">
-                        <div style="padding: var(--spacing-sm) var(--spacing-md); margin-bottom: var(--spacing-2xs); color: var(--purple-600); background: rgba(139, 92, 246, 0.1); border-radius: 6px;">Dashboard</div>
-                        <div style="padding: var(--spacing-sm) var(--spacing-md); margin-bottom: var(--spacing-2xs); color: var(--neutral-700);">Projects</div>
-                        <div style="padding: var(--spacing-sm) var(--spacing-md); margin-bottom: var(--spacing-2xs); color: var(--neutral-700);">Collaborations</div>
-                        <div style="padding: var(--spacing-sm) var(--spacing-md); color: var(--neutral-700);">Settings</div>
-                    </div>
-                </div>
+            <div class="card">
+                <h2><i class="fas fa-border-all"></i> Spacing</h2>
+                <p>Our 8-point grid system for consistent spacing, margins, and padding across all components and layouts.</p>
+                <a href="docs/spacing.html" class="btn colors-btn">
+                    <i class="fas fa-arrow-right"></i> View Spacing
+                </a>
             </div>
-        </section>
-
-        <section class="rationale-section">
-            <h2>🎵 Spacing Rationale</h2>
-            <p>Our 8-point grid system creates visual harmony and consistency across all interface elements.</p>
-            
-            <div class="rationale-grid">
-                <div class="rationale-card">
-                    <h4>Component Spacing</h4>
-                    <p>Use smaller spacing values (3xs, 2xs, xs) within components for tight relationships between related elements. Larger values (sm, md, lg) separate distinct sections or create breathing room.</p>
-                </div>
-                
-                <div class="rationale-card">
-                    <h4>Layout Hierarchy</h4>
-                    <p>Increase spacing as you move up the hierarchy. Text elements use 3xs-md, components use md-xl, and major sections use 2xl-4xl. This creates clear visual relationships and improves content scanning.</p>
-                </div>
-                
-                <div class="rationale-card">
-                    <h4>Responsive Considerations</h4>
-                    <p>On mobile devices, consider reducing spacing by one size (lg becomes md) to maximize content area while maintaining proportional relationships. Always test spacing on actual devices.</p>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
-
+    
+    <footer>
+        <p>For internal use and partner implementation | Design system version 1.0</p>
+        <p><small>Components will be added progressively as the product evolves</small></p>
+    </footer>
+    
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
